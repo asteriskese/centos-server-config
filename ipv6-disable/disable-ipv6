@@ -1,0 +1,31 @@
+11:33 14/01/2015
+################
+To set it permanently on system boot I put the setting also in /etc/sysctl.conf :
+#nano /etc/sysctl.conf
+net.ipv6.conf.default.disable_ipv6=1
+net.ipv6.conf.all.disable_ipv6=1
+
+#Approved new config: 
+root@srv001 ~# sysctl -p
+#
+nano /etc/sysconfig/network
+NETWORKING_IPV6=no
+IPV6INIT=no
+#
+reboot
+
+##########SSH DISABLE IPv6:
+#http://wiki.centos.org/FAQ/CentOS6
+nano /etc/ssh/sshd_config
+
+(1) Change the line
+#AddressFamily any
+to
+AddressFamily inet
+(inet is ipv4 only; inet6 is ipv6 only)
+
+or
+(2) Remove the hash mark (#) in front of the line
+#ListenAddress 0.0.0.0
+Then restart ssh.
+

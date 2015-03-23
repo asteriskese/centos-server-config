@@ -1,0 +1,48 @@
+﻿16:21 PM Mon/11/04/2011
+
+Bước 1: Cấu hình network:
+- Vào System -> Administration -> Server Settings -> Services
+- Check vào service “smb” -> click “Start” -> click “Save”.
+- Click chuột phải, vào “Open Terminal”
+- Đánh lệnh “cd /” để trở ra thư mục gốc.
+- Tạo thư mục share cho linux:
+mkdir share
+mkdir /share/data
+mkdir /share/setup
+- Sửa thuộc tính thư mục share cho linux:
+chmod –R 777 /share
+- Tạo user share cho linux:
+groupadd smb
+useradd -m -g smb admin
+- Đặt password cho user admin
+passwd admin
+> New UNIX password: <nhập password vào>
+> Retype new UNIX password: <nhập password vào>
+- Cấp quyền truy cập thư mục share cho user admin
+chown –R :smb /share
+chown –R admin /share
+Cách 1:
+- Vào sửa file smb.conf để share thư mục cho linux: (gõ lệnh “mc” trong terminal)
++ Gõ lệnh mc
++ Vào thư mục /etc/samba
++ Chọn file smb.conf -> Bấm F4
++ Thêm vào đoạn lệnh sau:
+{
+	[data]
+		comment = Data on Server
+		path = /share/data
+		writeable = yes
+		browseable = yes
+		guest ok = yes
+}
+
+{
+	[setup]
+		comment = Data Setup on Server
+		path = /share/setup
+		writeable = no
+		browseable = no
+		valid users = admin
+}
+
+- Bấm F2 để save lại, bấm ESC để thoát ra.

@@ -1,0 +1,35 @@
+﻿7:58 AM Wed/27/01/2010
+======================
+
+CHMOD - đó là phạm trù liên quan đến các files và thư mục, có chức năng chỉ ra cho server biết, ai có thể làm gì đối với file hay thư mục nào đó. Chủ yếu CHMOD đưa ra các lệnh như quyền được đọc, viết vào file (hay thư mục), quyền thực hiện một công việc nhất định.
+Vì phần lớn các servers làm việc trên cơ sở hệ thống UNIX, nên chúng ta sẽ nghiên cứu về cách CHMOD chính cho các servers này.
+Trên các hệ thống UNIX, người sử dụng được chia ra làm 3 nhóm: "user" (chủ nhân trực tiếp của các files), "group" (thành viên của nhóm mà người chủ nhân file có tham gia) và "world" (tất cả những trường hợp khác). Khi bạn kết nối với server, nó sẽ xác định xem bạn thuộc về nhóm nào. Ví dụ bạn kết nối với server bằng FTP, khai báo tên truy cập như một thành viên, chính server sẽ quy bạn vào nhóm "user". Còn những thành viên khác truy cập bằng FTP thuộc về nhóm "group". Khi ai đó đến site của bạn bằng trình duyệt web, sẽ được quy vào nhóm "world".
+Sau khi xác định nhóm, người sử dụng sẽ được gán quyền hạn nhất định đối với file hoặc thư mục nào đó. Cụ thể là người sử dụng sẽ được đọc, ghi hay tạo mới (hoặc xóa) file. Để xem thư mục nào đó thì nó phải ủng hộ cho việc xem này. Để được xem nội dung thư mục, thì các files hay thư mục con trong đó cũng phải có chế độ "Cho phép đọc". Còn để tạo file hay thư mục mới nằm trong thư mục này lại đòi hỏi phải có quyền ghi. Tóm lại, để thực hiện một trong những việc trên, cần phải đặt vào thư mục chế độ "quyền đọc" và "quyền thực hiện".
+
+Bây giờ chúng ta sẽ thực hành...
+Như trên đã nêu, có tất cả 3 nhóm người sử dụng và 3 "quyền hạn" đối với files hay thư mục. Để xác định quyền hạn cho các nhóm nhất định, thống nhất sử dụng các ký hiệu bằng con số như sau:
+4 = read (quyền được đọc)
+2 = write (quyền được ghi)
+1 = execute (quyền được thực hiện)
+Bằng phép cộng đơn giản các con số này có thể hiển thị được cả một "tổ hợp" quyền hạn khác nhau. Ví dụ, 3 (2+1) - quyền ghi và quyền thực hiện đối với file (hay thư mục); 5 (4+1) - quyền đọc và quyền thực hiện; 6 (4+2) - quyền đọc và quyền ghi; 7 (4+2+1) - quyền đọc, ghi và thực hiện. Tóm lại có tất cả 7 phương án sau:
+7 = read, write & execute
+6 = read & write
+5 = read & execute
+4 = read
+3 = write & execute
+2 = write
+1 = execute
+Ký hiệu lệnh CHMOD thường có 3 con số: con số đầu thể hiện quyền hạn gán cho người sử dụng thuộc nhóm "user" (Tức là đối với bạn). Con số thứ hai chỉ ra quyền hạn của người sử dụng thuộc nhóm "group" và con số thứ ba - dành cho nhóm "world".
+Trong phần lớn các chương trình FTP hiện đại đều ủng hộ CHMOD theo kiểu nêu trên (Ví dụ, công cụ truy cập bằng FTP mạnh nhất hiện nay là CuteFTP)
+Thế nhưng cũng không thừa nếu như ta biết thêm về các lệnh của hệ thống UNIX. lệnh "chmod" trong UNIX có 2 chế độ: tuyệt đối (Bằng các con số) và bằng các ký hiệu chữ.
+Khi sử dụng chế độ tuyệt đối (bằng các con số), thống nhất dùng tổ hợp 3 con số được nêu trên để thể hiện quyền hạn.
+Trong trường hợp sử dụng ký hiệu chữ, chúng ta sẽ bắt gặp những ký hiệu sau:
+"r" - quyền được đọc
+"w" - quyền được ghi
+"x" - quyền được thực hiện
+Ngoài ra còn có:
+"u" - đối với user
+"g" - đối với group
+"o" - đối với other (world)
+"a" - đối với all (tất cả)
+Ví dụ: 755 = chmod u=rwx,go=rx filename; 644 = chmod u=rw,go=r filename; 600 = chmod u=rw,go= filename; 444 = chmod a=r filename.

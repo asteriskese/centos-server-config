@@ -1,0 +1,14 @@
+Edit the server configuration
+
+Edit /etc/sysconfig/vncservers, and add the following to the end of the file.
+
+VNCSERVERS="1:root 2:oracle"
+VNCSERVERARGS[1]="-geometry 1024x768"
+VNCSERVERARGS[2]="-geometry 1024x768"
+
+or
+########################
+VNCSERVERS="1:root"
+VNCSERVERARGS[1]="-geometry 1024x768"
+
+Larry will have a 640 by 480 screen, as will Moe. Curly will have an 800 by 600 screen. 

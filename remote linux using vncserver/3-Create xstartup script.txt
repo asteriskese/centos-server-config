@@ -1,0 +1,35 @@
+Create xstartup scripts
+
+=====We will create the xstartup scripts by starting and stopping the vncserver as root.
+	# /sbin/service vncserver start
+	# /sbin/service vncserver stop
+
+=====Login to each user and edit the "xstartup" script. To use Larry as an example, first login as larry
+	[~]$ cd .vnc
+	[.vnc] ls
+	mymachine.localnet:1.log  passwd  xstartup
+
+=====Edit "xstartup". The original should look like:
+nano /root/.vnc/xstartup
+	#!/bin/sh
+	# Uncomment the following two lines for normal desktop:
+	# unset SESSION_MANAGER
+	# exec /etc/X11/xinit/xinitrc
+	[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+	[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+	xsetroot -solid grey
+	vncconfig -iconic &
+	xterm -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" & twm &
+
+=====Add the line indicated below to assure that an xterm is always present, and uncomment the two lines as directed if you wish to run the user's normal desktop window manager in the VNC. Note that in the likely reduced resolution and color depth of a VNC window the full desktop will be rather cramped and a look bit odd. If you do not uncomment the two lines you will get a gray speckled background to the VNC window.
+#!/bin/sh
+# Add the following line to ensure you always have an xterm available.
+( while true ; do xterm ; done ) &
+# Uncomment the following two lines for normal desktop:
+unset SESSION_MANAGER
+exec /etc/X11/xinit/xinitrc
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &
+xterm -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" & twm &

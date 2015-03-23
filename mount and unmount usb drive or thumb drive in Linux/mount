@@ -1,0 +1,13 @@
+mount -t vfat /dev/sdb1 /mnt/usb  
+mount /dev/sdb1 /mnt/usb  
+
+NOTES:
+This tells the kernel to attach file system found on device (-t option for file system type) at the directory dir. The file system types which are currently supported include: adfs, affs, autofs, cifs, coda, coherent, cramfs, ebugfs, devpts, efs, ext, ext2, ext3, hfs, hfsplus, hpfs, iso9660, jfs, minix, msdos, ncpfs, nfs, nfs4, ntfs, proc, qnx4, ramfs, reiserfs, romfs, smbfs, sysv, tmpfs, udf, ufs, umsdos, usbfs, vfat, xenix, xfs, xiafs. 
+
+
+
+umount /mnt/usb/ 
+
+
+
+Source: http://www.basicconfig.com/linux/mount

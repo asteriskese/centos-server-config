@@ -1,0 +1,31 @@
+
+Normal:
+	useradd <username>
+	
+	
+Adding new user to the group:
+	useradd -g <group name> <username>
+	useradd -g vboxusers -d /opt/vboxuser vboxuser
+	ex:
+		groupadd oinstall
+		groupadd dba
+		groupadd oper
+
+		useradd -g oinstall -G dba oracle
+
+#11:16 AM 27/12/2014
+groupadd nginx
+useradd -g nginx nginx
+
+#8:33 28/02/2015
+Tao Group, Acct
+root@srv:~# groupadd torrent
+root@srv:~# useradd -g torrent -d /opt/www/1.nguoichungcu.com torrent
+
+
+usermod -a -G debian-transmission torrent
+chgrp -R debian-transmission /opt/www/1.nguoichungcu.com/torrent
+chmod -R 775 /opt/www/1.nguoichungcu.com/torrent
+
+Thay doi thu muc HOME cua user torrent
+usermod -d /opt/www/1.nguoichungcu.com/torrent/ torrent

@@ -1,0 +1,7 @@
+Copy from Linux to MS (current dir), using putty on MS:
+
+pscp user@box:/some/path/somefile.ext .
+
+to another MS dir
+
+pscp user@box:/some/path/somefile.ext C:\somems\mspath\msfname.ext

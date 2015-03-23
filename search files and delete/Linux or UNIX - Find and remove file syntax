@@ -1,0 +1,25 @@
+9:41 23/01/2015
+http://www.cyberciti.biz/faq/linux-unix-how-to-find-and-remove-files/
+Linux or UNIX - Find and remove file syntax
+
+The basic find command syntax is: 
+#find dir-name criteria action
+    dir-name : - Defines the working directory such as look into /tmp/
+    criteria : Use to select files such as "*.sh"
+    action : The find action (what-to-do on file) such as delete the file.
+
+To remove multiple files such as *.jpg or *.sh with one command find, use:
+#find . -name "FILE-TO-FIND" -exec rm -rf {} \;
+
+OR
+
+#find . -type f -name "FILE-TO-FIND" -exec rm -f {} \;
+
+The only difference between above two syntax is that the first command remove directories as well where second command only removes files. Options:
+    -name "FILE-TO-FIND" : File pattern.
+    -exec rm -rf {} \; : Delete all files matched by file pattern.
+    -type f : Only match files and do not include directory names.
+#
+#
+#
+#find . -type f -name ".Asp" -exec rm -f {} \;

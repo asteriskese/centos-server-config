@@ -1,0 +1,1990 @@
+From: <Saved by UnMHT>
+Subject: =?iso-2022-jp?B?SXB0YWJsZXMgPyBFeGFtcGxlIEZpcmV3YWxsIFJ1bGVzZXRzIHwgSmFtZXMgU3RlcGhlbnM=?=
+Date: Fri, Jun 03 2011 11:45:30 GMT+0700
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	boundary="----=_NextPart_000_0000_5C361841.94A57A19";
+	type="text/html"
+
+------=_NextPart_000_0000_5C361841.94A57A19
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sns.ias.edu/~jns/wp/2006/01/12/iptables-example-rulesets/
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "" "">
+<html lang=3D"en-US" dir=3D"ltr"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3Dutf-8">
+
+
+<meta charset=3D"UTF-8">
+<title>Iptables =E2=80=93 Example Firewall Rulesets | James Stephens</title>
+<link href=3D"http://gmpg.org/xfn/11" rel=3D"profile"></link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/wp-content/themes/twentyten/st=
+yle.css" media=3D"all" type=3D"text/css" rel=3D"stylesheet"></link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/xmlrpc.php" rel=3D"pingback"><=
+/link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/feed/" title=3D"James Stephens=
+ =C2=BB Feed" type=3D"application/rss+xml" rel=3D"alternate"></link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/comments/feed/" title=3D"James=
+ Stephens =C2=BB Comments Feed" type=3D"application/rss+xml" rel=3D"alterna=
+te"></link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/2006/01/12/iptables-example-ru=
+lesets/feed/" title=3D"James Stephens =C2=BB Iptables =E2=80=93 Example Fir=
+ewall Rulesets Comments Feed" type=3D"application/rss+xml" rel=3D"alternate=
+"></link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/xmlrpc.php?rsd" title=3D"RSD"=
+ type=3D"application/rsd+xml" rel=3D"EditURI"></link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/wp-includes/wlwmanifest.xml"=
+ type=3D"application/wlwmanifest+xml" rel=3D"wlwmanifest"></link>=20
+<link href=3D"http://www.sns.ias.edu/~jns/wp/" title=3D"James Stephens" rel=
+=3D"index"></link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/2005/03/03/photos-of-the-gates=
+-new-york-city/" title=3D"Photographs Of =E2=80=9CThe Gates=E2=80=9D, New=
+ York City" rel=3D"start"></link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/2006/01/12/iptables-connection=
+-tracking-ftp/" title=3D"Iptables Connection Tracking =E2=80=93 FTP" rel=3D=
+"prev"></link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/2006/01/12/using-adsense-with-=
+linpha/" title=3D"Using Adsense With Linpha" rel=3D"next"></link>
+<meta content=3D"WordPress 3.1.2" name=3D"generator">
+<link href=3D"http://www.sns.ias.edu/~jns/wp/2006/01/12/iptables-example-ru=
+lesets/" rel=3D"canonical"></link>
+<link href=3D"http://www.sns.ias.edu/~jns/wp/?p=3D21" rel=3D"shortlink"></l=
+ink>
+<base href=3D"http://www.sns.ias.edu/~jns/wp/2006/01/12/iptables-example-ru=
+lesets/"></base></head><body class=3D"single single-post postid-21 single-f=
+ormat-standard">
+<div class=3D"hfeed" id=3D"wrapper">
+	<div id=3D"header">
+		<div id=3D"masthead">
+			<div role=3D"banner" id=3D"branding">
+								<div id=3D"site-title">
+					<span>
+						<a rel=3D"home" title=3D"James Stephens" href=3D"http://www.sns.ias.e=
+du/~jns/wp/">James Stephens</a>
+					</span>
+				</div>
+				<div id=3D"site-description"></div>
+
+										<img width=3D"940" height=3D"198" alt=3D"" src=3D"http://www.sns.=
+ias.edu/~jns/wp/wp-content/uploads/MG_01233.jpg">
+								</div><!-- #branding -->
+
+			<div role=3D"navigation" id=3D"access">
+			  				<div class=3D"skip-link screen-reader-text"><a title=3D"Skip to co=
+ntent" href=3D"#content">Skip to content</a></div>
+								<div class=3D"menu"><ul><li><a title=3D"Home" href=3D"http://www.sn=
+s.ias.edu/~jns/wp/">Home</a></li></ul></div>
+			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id=3D"main">
+
+		<div id=3D"container">
+			<div role=3D"main" id=3D"content">
+
+		=09
+
+				<div class=3D"navigation" id=3D"nav-above">
+					<div class=3D"nav-previous"><a rel=3D"prev" href=3D"http://www.sns.ias=
+.edu/~jns/wp/2006/01/12/iptables-connection-tracking-ftp/"><span class=3D"m=
+eta-nav">=E2=86=90</span> Iptables Connection Tracking =E2=80=93 FTP</a></d=
+iv>
+					<div class=3D"nav-next"><a rel=3D"next" href=3D"http://www.sns.ias.edu=
+/~jns/wp/2006/01/12/using-adsense-with-linpha/">Using Adsense With Linpha=
+ <span class=3D"meta-nav">=E2=86=92</span></a></div>
+				</div><!-- #nav-above -->
+
+				<div class=3D"post-21 post type-post status-publish format-standard hen=
+try category-iptables category-unix-scripts category-unix-security" id=3D"p=
+ost-21">
+					<h1 class=3D"entry-title">Iptables =E2=80=93 Example Firewall Rulesets=
+</h1>
+
+					<div class=3D"entry-meta">
+						<span class=3D"meta-prep meta-prep-author">Posted on</span> <a rel=3D=
+"bookmark" title=3D"10:46 am" href=3D"http://www.sns.ias.edu/~jns/wp/2006/0=
+1/12/iptables-example-rulesets/"><span class=3D"entry-date">January 12, 200=
+6</span></a> <span class=3D"meta-sep">by</span> <span class=3D"author vcard=
+"><a title=3D"View all posts by James Stephens" href=3D"http://www.sns.ias.=
+edu/~jns/wp/author/admin/" class=3D"url fn n">James Stephens</a></span>		=
+			</div><!-- .entry-meta -->
+
+					<div class=3D"entry-content">
+						<p>Two example iptables firewall rulesets are provided. Both are desi=
+gned for a single-homed host and utilize the stateful inspection feature of=
+ iptables for all connections.<br>
+<span id=3D"more-21"></span></p>
+<h3>Original simple ruleset</h3>
+<p><!--adsense#Iptables-->
+</p><p>This is the original deny-based ruleset. It=E2=80=99s been around a=
+ few years now. The configuration is relatively long, both because it is we=
+ll commented, and also because many different services have been considered=
+.</p>
+<p></p>
+<p>The original simple ruleset may be downloaded <a href=3D"/~jns/files/ipt=
+ables_ruleset">=E2=80=9Chere=E2=80=9D</a>. if you are just starting out wit=
+h iptables firewalling, this is the one to use.</p>
+<p>A simple accompanying startup script (to be placed somewhere like <code>=
+/etc/rc.d/init.d/iptables</code>) is available <a href=3D"/~jns/files/iptab=
+les_startup_script">=E2=80=9Chere=E2=80=9D</a>. Don=E2=80=99t forget this.<=
+/p>
+<p><!--adsense#Iptables_Ad--></p>
+<h3>Updated more complex ruleset</h3>
+<p>This ruleset is deny-based only for inbound connections =E2=80=93 in oth=
+er words all outbound connections are allowed. I made this change because=
+ I was forever adding obscure ports for people that run webservers on 88,=
+ or 8080 and things like that, and it was forever a problem for my own trav=
+elling laptop users running this script, getting into difficulties and then=
+ calling for help.</p>
+<p>This more advanced ruleset is designed to replace the iptables startup=
+ script in /etc/rc.d/init.d rather than having a separate startup script.=
+ You will observe that the updated script is coded in a more complicated st=
+yle to avoid duplication..</p>
+<p><!--adsense#Iptables_Ad--></p>
+<p>The updated ruleset may be downloaded <a href=3D"/~jns/files/iptables_ru=
+leset_updated">=E2=80=9Chere=E2=80=9D</a>.</p>
+<p>Note =E2=80=93 If you prefer a deny-based firewall configuration both in=
+bound and outbound, it is trivial to modify the TCPSERVICES_OUTBOUND and UD=
+PSERVICES_OUTBOUND variables and then add specific ports.</p>
+<h3>Ruleset for a WRT54GL broadband router</h3>
+<p>See <a href=3D"/~jns/wp/2006/03/24/iptables-on-a-linksys-cisco-wrt54gl-b=
+roadband-router-howto/">this post</a> for a ruleset to operate on the <a hr=
+ef=3D"http://www.amazon.com/exec/obidos/redirect?link_code=3Das2&amp;path=
+=3DASIN/B000BTL0OA&amp;tag=3Djamesstephens-20&amp;camp=3D1789&amp;creative=
+=3D9325">Linksys-Cisco WRT54GL Wireless-G Broadband Router</a><img width=3D=
+"1" height=3D"1" border=3D"0" style=3D"border: medium none ! important; mar=
+gin: 0px ! important;" alt=3D"" src=3D"http://www.assoc-amazon.com/e/ir?t=
+=3Djamesstephens-20&amp;l=3Das2&amp;o=3D1&amp;a=3DB000BTL0OA" class=3D" qca=
+bszvtgnrcxswhpryu">.</p>
+<p>Please consider making a donation if you find these scripts useful to yo=
+u. Thankyou.</p>
+<form method=3D"post" action=3D"https://www.paypal.com/cgi-bin/webscr">
+<input type=3D"hidden" name=3D"cmd" value=3D"_s-xclick"></input>
+<input type=3D"image" border=3D"0" alt=3D"Make payments with PayPal - it&#x=
+27;s fast, free and secure!" name=3D"submit" src=3D"https://www.paypal.com/=
+en_US/i/btn/x-click-but04.gif" value=3D""></input>
+<input type=3D"hidden" name=3D"encrypted" value=3D"-----BEGIN PKCS7-----MII=
+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
+C4bNzlZ1013AsSFDJCZy0-----END PKCS7-----&lt;br /&gt;
+"></input><br>
+</form>
+											</div><!-- .entry-content -->
+
+
+					<div class=3D"entry-utility">
+						This entry was posted in <a rel=3D"category tag" title=3D"View all po=
+sts in Iptables" href=3D"http://www.sns.ias.edu/~jns/wp/category/linux/ipta=
+bles/">Iptables</a>, <a rel=3D"category tag" title=3D"View all posts in Uni=
+x Scripts" href=3D"http://www.sns.ias.edu/~jns/wp/category/linux/unix-scrip=
+ts/">Unix Scripts</a>, <a rel=3D"category tag" title=3D"View all posts in=
+ Unix Security" href=3D"http://www.sns.ias.edu/~jns/wp/category/linux/unix-=
+security/">Unix Security</a>. Bookmark the <a rel=3D"bookmark" title=3D"Per=
+malink to Iptables =E2=80=93 Example Firewall Rulesets" href=3D"http://www.=
+sns.ias.edu/~jns/wp/2006/01/12/iptables-example-rulesets/">permalink</a>.=
+											</div><!-- .entry-utility -->
+				</div><!-- #post-## -->
+
+				<div class=3D"navigation" id=3D"nav-below">
+					<div class=3D"nav-previous"><a rel=3D"prev" href=3D"http://www.sns.ias=
+.edu/~jns/wp/2006/01/12/iptables-connection-tracking-ftp/"><span class=3D"m=
+eta-nav">=E2=86=90</span> Iptables Connection Tracking =E2=80=93 FTP</a></d=
+iv>
+					<div class=3D"nav-next"><a rel=3D"next" href=3D"http://www.sns.ias.edu=
+/~jns/wp/2006/01/12/using-adsense-with-linpha/">Using Adsense With Linpha=
+ <span class=3D"meta-nav">=E2=86=92</span></a></div>
+				</div><!-- #nav-below -->
+
+			=09
+			<div id=3D"comments">
+
+
+			<h3 id=3D"comments-title">4 Responses to <em>Iptables =E2=80=93 Example=
+ Firewall Rulesets</em></h3>
+
+
+			<ol class=3D"commentlist">
+					<li id=3D"li-comment-20087" class=3D"comment even thread-even depth-1">
+		<div id=3D"comment-20087">
+		<div class=3D"comment-author vcard">
+			<img width=3D"40" height=3D"40" class=3D"avatar avatar-40 photo" src=3D"=
+http://1.gravatar.com/avatar/17456a53edd0c616e6d1d287062289e4?s=3D40&amp;d=
+=3Dhttp%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%=
+3Fs%3D40&amp;r=3DG" alt=3D"">			<cite class=3D"fn">Jason</cite> <span class=
+=3D"says">says:</span>		</div><!-- .comment-author .vcard -->
+	=09
+		<div class=3D"comment-meta commentmetadata"><a href=3D"http://www.sns.ias=
+.edu/~jns/wp/2006/01/12/iptables-example-rulesets/comment-page-1/#comment-2=
+0087">
+			December 5, 2006 at 11:16 am</a>		</div><!-- .comment-meta .commentmetad=
+ata -->
+
+		<div class=3D"comment-body"><p>Hi James,</p>
+<p> i am studying the script above, but find that my VPS hosting does not=
+ support =E2=80=9Cstate=E2=80=9D module ,<br>
+ i.e. script like<br>
+-m state =E2=80=93state ESTABLISHED -j ACCEPT<br>
+will not work ( with error : =E2=80=98No chain/target/match by that name=E2=
+=80=99 )<br>
+i am thinking of 2 solutions, may i have some hint for them?<br>
+1. i=E2=80=99ve downloaded latest version of iptables-1.3.7 , but may i kno=
+w how to config and build so that i can add more modules ? and is it possib=
+le? (some said can=E2=80=99t change iptable once Linux was compiled)<br>
+2. i guess ,down to a lower level, state(s) are in the form of flags ( like=
+ SYN, ACK. )<br>
+would you mind telling us the flags pattern which have same meaning with<br>
+a:  =E2=80=93state NEW<br>
+b:  =E2=80=93state ESTABLISHED<br>
+c:  =E2=80=93state RELATED</p>
+</div>
+
+		<div class=3D"reply">
+					</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li>
+	<li id=3D"li-comment-26800" class=3D"comment odd alt thread-odd thread-alt=
+ depth-1">
+		<div id=3D"comment-26800">
+		<div class=3D"comment-author vcard">
+			<img width=3D"40" height=3D"40" class=3D"avatar avatar-40 photo" src=3D"=
+http://1.gravatar.com/avatar/dde3a5048e456c451b7c518857e1818c?s=3D40&amp;d=
+=3Dhttp%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%=
+3Fs%3D40&amp;r=3DG" alt=3D"">			<cite class=3D"fn">Ben</cite> <span class=
+=3D"says">says:</span>		</div><!-- .comment-author .vcard -->
+	=09
+		<div class=3D"comment-meta commentmetadata"><a href=3D"http://www.sns.ias=
+.edu/~jns/wp/2006/01/12/iptables-example-rulesets/comment-page-1/#comment-2=
+6800">
+			January 17, 2007 at 12:48 am</a>		</div><!-- .comment-meta .commentmetad=
+ata -->
+
+		<div class=3D"comment-body"><p>Jason,</p>
+<p>Make sure you have a double dash in front of state =E2=80=9C=E2=80=93=E2=
+=80=9D.</p>
+<p>You cannot load additional modules unless you have root access. (general=
+ly true for a virtual machine, but not a virtual host)</p>
+<p>Stateful packet inspection uses more memory than simple flag inspection,=
+ but is far more advanced.  For example, a spoofed SYN,ACK packet looks lik=
+e a response to ACK, therefore a stateless firewall considers that as ESTAB=
+LISHED (anything w/ACK is), while the stateful firewall correctly determine=
+s that it is not part of any existing connection.  There is no way to get=
+ true state matching without connection tracking.</p>
+</div>
+
+		<div class=3D"reply">
+					</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li>
+	<li class=3D"post pingback">
+		<p>Pingback: <a class=3D"url" rel=3D"external nofollow" href=3D"http://st=
+onestreem.com/2007/07/26/personal-firewall-shell-script/">The Most Amazing=
+ Web Resources</a></p>
+	</li>
+	<li id=3D"li-comment-81015" class=3D"comment even thread-even depth-1">
+		<div id=3D"comment-81015">
+		<div class=3D"comment-author vcard">
+			<img width=3D"40" height=3D"40" class=3D"avatar avatar-40 photo" src=3D"=
+http://1.gravatar.com/avatar/3c3c16f034b10ff8b013ce951bb38d8c?s=3D40&amp;d=
+=3Dhttp%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%=
+3Fs%3D40&amp;r=3DG" alt=3D"">			<cite class=3D"fn">freeroute</cite> <span=
+ class=3D"says">says:</span>		</div><!-- .comment-author .vcard -->
+	=09
+		<div class=3D"comment-meta commentmetadata"><a href=3D"http://www.sns.ias=
+.edu/~jns/wp/2006/01/12/iptables-example-rulesets/comment-page-1/#comment-8=
+1015">
+			October 9, 2007 at 1:38 pm</a>		</div><!-- .comment-meta .commentmetadat=
+a -->
+
+		<div class=3D"comment-body"><p>Hello James,<br>
+I tried your simple firewall on my box (Debian).<br>
+Everyhing ok. But I have a little problem. I would like to allow inbound ss=
+h traffic,too.<br>
+It doesn=E2=80=99t work. Could you help me?</p>
+<p>## SSH<br>
+# Allow ssh outbound.<br>
+iptables -A INPUT  -i $IFACE -p tcp =E2=80=93dport 22 -m state =E2=80=93sta=
+te NEW -j ACCEPT #allow ssh in<br>
+iptables -A INPUT  -i $IFACE -p tcp =E2=80=93sport 22 -m state =E2=80=93sta=
+te ESTABLISHED -j ACCEPT<br>
+iptables -A OUTPUT -o $IFACE -p tcp =E2=80=93dport 22 -m state =E2=80=93sta=
+te NEW,ESTABLISHED -j ACCEPT</p>
+</div>
+
+		<div class=3D"reply">
+					</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li>
+			</ol>
+
+
+
+								<div id=3D"respond">
+				<h3 id=3D"reply-title">Leave a Reply <small><a style=3D"display: none;"=
+ href=3D"/~jns/wp/2006/01/12/iptables-example-rulesets/#respond" id=3D"canc=
+el-comment-reply-link" rel=3D"nofollow">Cancel reply</a></small></h3>
+									<p class=3D"must-log-in">You must be <a href=3D"http://www.sns.ias=
+.edu/~jns/wp/wp-login.php?redirect_to=3Dhttp%3A%2F%2Fwww.sns.ias.edu%2F%7Ej=
+ns%2Fwp%2F2006%2F01%2F12%2Fiptables-example-rulesets%2F">logged in</a> to=
+ post a comment.</p>												</div><!-- #respond -->
+					=09
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div role=3D"complementary" class=3D"widget-area" id=3D"primary">
+			<ul class=3D"xoxo">
+
+
+			<li class=3D"widget-container widget_search" id=3D"search">
+				<form action=3D"http://www.sns.ias.edu/~jns/wp/" id=3D"searchform" meth=
+od=3D"get" role=3D"search">
+	<div><label for=3D"s" class=3D"screen-reader-text">Search for:</label>
+	<input type=3D"text" id=3D"s" name=3D"s" value=3D""></input>
+	<input type=3D"submit" id=3D"searchsubmit" value=3D"Search"></input>
+	</div>
+	</form>			</li>
+
+			<li class=3D"widget-container" id=3D"archives">
+				<h3 class=3D"widget-title">Archives</h3>
+				<ul>
+						<li><a title=3D"July 2008" href=3D"http://www.sns.ias.edu/~jns/wp/200=
+8/07/">July 2008</a></li>
+	<li><a title=3D"December 2007" href=3D"http://www.sns.ias.edu/~jns/wp/2007=
+/12/">December 2007</a></li>
+	<li><a title=3D"December 2006" href=3D"http://www.sns.ias.edu/~jns/wp/2006=
+/12/">December 2006</a></li>
+	<li><a title=3D"April 2006" href=3D"http://www.sns.ias.edu/~jns/wp/2006/04=
+/">April 2006</a></li>
+	<li><a title=3D"March 2006" href=3D"http://www.sns.ias.edu/~jns/wp/2006/03=
+/">March 2006</a></li>
+	<li><a title=3D"February 2006" href=3D"http://www.sns.ias.edu/~jns/wp/2006=
+/02/">February 2006</a></li>
+	<li><a title=3D"January 2006" href=3D"http://www.sns.ias.edu/~jns/wp/2006/=
+01/">January 2006</a></li>
+	<li><a title=3D"December 2005" href=3D"http://www.sns.ias.edu/~jns/wp/2005=
+/12/">December 2005</a></li>
+	<li><a title=3D"March 2005" href=3D"http://www.sns.ias.edu/~jns/wp/2005/03=
+/">March 2005</a></li>
+				</ul>
+			</li>
+
+			<li class=3D"widget-container" id=3D"meta">
+				<h3 class=3D"widget-title">Meta</h3>
+				<ul>
+										<li><a href=3D"http://www.sns.ias.edu/~jns/wp/wp-login.php">Log=
+ in</a></li>
+									</ul>
+			</li>
+
+					</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div role=3D"contentinfo" id=3D"footer">
+		<div id=3D"colophon">
+
+
+
+			<div id=3D"site-info">
+				<a rel=3D"home" title=3D"James Stephens" href=3D"http://www.sns.ias.edu=
+/~jns/wp/">
+					James Stephens				</a>
+			</div><!-- #site-info -->
+
+			<div id=3D"site-generator">
+								<a rel=3D"generator" title=3D"Semantic Personal Publishing Platform=
+" href=3D"http://wordpress.org/">Proudly powered by WordPress.</a>
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+</body></html>
+------=_NextPart_000_0000_5C361841.94A57A19
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sns.ias.edu/~jns/wp/wp-content/themes/twentyten/style.css
+
+/*
+Theme Name: Twenty Ten
+Theme URI: http://wordpress.org/
+Description: The 2010 theme for WordPress is stylish, customizable, simple,=
+ and readable -- make it yours with a custom menu, header image, and backgr=
+ound. Twenty Ten supports six widgetized areas (two in the sidebar, four in=
+ the footer) and featured images (thumbnails for gallery posts and custom=
+ header images for posts and pages). It includes stylesheets for print and=
+ the admin Visual Editor, special styles for posts in the "Asides" and "Gal=
+lery" categories, and has an optional one-column page template that removes=
+ the sidebar.
+Author: the WordPress team
+Version: 1.2
+License: GNU General Public License
+License URI: license.txt
+Tags: black, blue, white, two-columns, fixed-width, custom-header, custom-b=
+ackground, threaded-comments, sticky-post, translation-ready, microformats,=
+ rtl-language-support, editor-style, custom-menu
+*/
+
+
+/* =3DReset default browser CSS. Based on work by Eric Meyer: http://meyerw=
+eb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-weight: normal;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote {
+	quotes: none;
+}
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing=3D"0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a img {
+	border: none;
+}
+
+/* =3DLayout
+-------------------------------------------------------------- */
+
+/*
+LAYOUT: Two columns
+DESCRIPTION: Two-column fixed layout with one sidebar right of content
+*/
+
+#container {
+	float: left;
+	margin: 0 -240px 0 0;
+	width: 100%;
+}
+#content {
+	margin: 0 280px 0 20px;
+}
+#primary,
+#secondary {
+	float: right;
+	overflow: hidden;
+	width: 220px;
+}
+#secondary {
+	clear: right;
+}
+#footer {
+	clear: both;
+	width: 100%;
+}
+
+/*
+LAYOUT: One column, no sidebar
+DESCRIPTION: One centered column with no sidebar
+*/
+
+.one-column #content {
+	margin: 0 auto;
+	width: 640px;
+}
+
+/*
+LAYOUT: Full width, no sidebar
+DESCRIPTION: Full width content with no sidebar; used for attachment pages
+*/
+
+.single-attachment #content {
+	margin: 0 auto;
+	width: 900px;
+}
+
+
+/* =3DFonts
+-------------------------------------------------------------- */
+body,
+input,
+textarea,
+.page-title span,
+.pingback a.url {
+	font-family: Georgia, "Bitstream Charter", serif;
+}
+h3#comments-title,
+h3#reply-title,
+#access .menu,
+#access div.menu ul,
+#cancel-comment-reply-link,
+.form-allowed-tags,
+#site-info,
+#site-title,
+#wp-calendar,
+.comment-meta,
+.comment-body tr th,
+.comment-body thead th,
+.entry-content label,
+.entry-content tr th,
+.entry-content thead th,
+.entry-meta,
+.entry-title,
+.entry-utility,
+#respond label,
+.navigation,
+.page-title,
+.pingback p,
+.reply,
+.widget-title,
+.wp-caption-text {
+	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-ser=
+if;
+}
+input[type=3Dsubmit] {
+	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-ser=
+if;
+}
+pre {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+}
+code {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospac=
+e;
+}
+
+
+/* =3DStructure
+-------------------------------------------------------------- */
+
+/* The main theme structure */
+#access .menu-header,
+div.menu,
+#colophon,
+#branding,
+#main,
+#wrapper {
+	margin: 0 auto;
+	width: 940px;
+}
+#wrapper {
+	background: #fff;
+	margin-top: 20px;
+	padding: 0 20px;
+}
+
+/* Structure the footer area */
+#footer-widget-area {
+	overflow: hidden;
+}
+#footer-widget-area .widget-area {
+	float: left;
+	margin-right: 20px;
+	width: 220px;
+}
+#footer-widget-area #fourth {
+	margin-right: 0;
+}
+#site-info {
+	float: left;
+	font-size: 14px;
+	font-weight: bold;
+	width: 700px;
+}
+#site-generator {
+	float: right;
+	width: 220px;
+}
+
+
+/* =3DGlobal Elements
+-------------------------------------------------------------- */
+
+/* Main global 'theme' and typographic styles */
+body {
+	background: #f1f1f1;
+}
+body,
+input,
+textarea {
+	color: #666;
+	font-size: 12px;
+	line-height: 18px;
+}
+hr {
+	background-color: #e7e7e7;
+	border: 0;
+	clear: both;
+	height: 1px;
+	margin-bottom: 18px;
+}
+
+/* Text elements */
+p {
+	margin-bottom: 18px;
+}
+ul {
+	list-style: square;
+	margin: 0 0 18px 1.5em;
+}
+ol {
+	list-style: decimal;
+	margin: 0 0 18px 1.5em;
+}
+ol ol {
+	list-style: upper-alpha;
+}
+ol ol ol {
+	list-style: lower-roman;
+}
+ol ol ol ol {
+	list-style: lower-alpha;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+	margin-bottom: 0;
+}
+dl {
+	margin: 0 0 24px 0;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin-bottom: 18px;
+}
+strong {
+	font-weight: bold;
+}
+cite,
+em,
+i {
+	font-style: italic;
+}
+big {
+	font-size: 131.25%;
+}
+ins {
+	background: #ffc;
+	text-decoration: none;
+}
+blockquote {
+	font-style: italic;
+	padding: 0 3em;
+}
+blockquote cite,
+blockquote em,
+blockquote i {
+	font-style: normal;
+}
+pre {
+	background: #f7f7f7;
+	color: #222;
+	line-height: 18px;
+	margin-bottom: 18px;
+	padding: 1.5em;
+}
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+sup,
+sub {
+	height: 0;
+	line-height: 1;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+input[type=3D"text"],
+textarea {
+	background: #f9f9f9;
+	border: 1px solid #ccc;
+	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
+	padding: 2px;
+}
+a:link {
+	color: #0066cc;
+}
+a:visited {
+	color: #743399;
+}
+a:active,
+a:hover {
+	color: #ff4b33;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+	position: absolute;
+	left: -9000px;
+}
+
+
+/* =3DHeader
+-------------------------------------------------------------- */
+
+#header {
+	padding: 30px 0 0 0;
+}
+#site-title {
+	float: left;
+	font-size: 30px;
+	line-height: 36px;
+	margin: 0 0 18px 0;
+	width: 700px;
+}
+#site-title a {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+#site-description {
+	clear: right;
+	float: right;
+	font-style: italic;
+	margin: 15px 0 18px 0;
+	width: 220px;
+}
+
+/* This is the custom header image */
+#branding img {
+	border-top: 4px solid #000;
+	border-bottom: 1px solid #000;
+	display: block;
+	float: left;
+}
+
+
+/* =3DMenu
+-------------------------------------------------------------- */
+
+#access {
+	background: #000;
+	display: block;
+	float: left;
+	margin: 0 auto;
+	width: 940px;
+}
+#access .menu-header,
+div.menu {
+	font-size: 13px;
+	margin-left: 12px;
+	width: 928px;
+}
+#access .menu-header ul,
+div.menu ul {
+	list-style: none;
+	margin: 0;
+}
+#access .menu-header li,
+div.menu li {
+	float: left;
+	position: relative;
+}
+#access a {
+	color: #aaa;
+	display: block;
+	line-height: 38px;
+	padding: 0 10px;
+	text-decoration: none;
+}
+#access ul ul {
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	display: none;
+	position: absolute;
+	top: 38px;
+	left: 0;
+	float: left;
+	width: 180px;
+	z-index: 99999;
+}
+#access ul ul li {
+	min-width: 180px;
+}
+#access ul ul ul {
+	left: 100%;
+	top: 0;
+}
+#access ul ul a {
+	background: #333;
+	line-height: 1em;
+	padding: 10px;
+	width: 160px;
+	height: auto;
+}
+#access li:hover > a,
+#access ul ul :hover > a {
+	background: #333;
+	color: #fff;
+}
+#access ul li:hover > ul {
+	display: block;
+}
+#access ul li.current_page_item > a,
+#access ul li.current-menu-ancestor > a,
+#access ul li.current-menu-item > a,
+#access ul li.current-menu-parent > a {
+	color: #fff;
+}
+* html #access ul li.current_page_item a,
+* html #access ul li.current-menu-ancestor a,
+* html #access ul li.current-menu-item a,
+* html #access ul li.current-menu-parent a,
+* html #access ul li a:hover {
+	color: #fff;
+}
+
+
+/* =3DContent
+-------------------------------------------------------------- */
+
+#main {
+	clear: both;
+	overflow: hidden;
+	padding: 40px 0 0 0;
+}
+#content {
+	margin-bottom: 36px;
+}
+#content,
+#content input,
+#content textarea {
+	color: #333;
+	font-size: 16px;
+	line-height: 24px;
+}
+#content p,
+#content ul,
+#content ol,
+#content dd,
+#content pre,
+#content hr {
+	margin-bottom: 24px;
+}
+#content ul ul,
+#content ol ol,
+#content ul ol,
+#content ol ul {
+	margin-bottom: 0;
+}
+#content pre,
+#content kbd,
+#content tt,
+#content var {
+	font-size: 15px;
+	line-height: 21px;
+}
+#content code {
+	font-size: 13px;
+}
+#content dt,
+#content th {
+	color: #000;
+}
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+	color: #000;
+	line-height: 1.5em;
+	margin: 0 0 20px 0;
+}
+#content table {
+	border: 1px solid #e7e7e7;
+	margin: 0 -1px 24px 0;
+	text-align: left;
+	width: 100%;
+}
+#content tr th,
+#content thead th {
+	color: #888;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 18px;
+	padding: 9px 24px;
+}
+#content tr td {
+	border-top: 1px solid #e7e7e7;
+	padding: 6px 24px;
+}
+#content tr.odd td {
+	background: #f2f7fc;
+}
+.hentry {
+	margin: 0 0 48px 0;
+}
+.home .sticky {
+	background: #f2f7fc;
+	border-top: 4px solid #000;
+	margin-left: -20px;
+	margin-right: -20px;
+	padding: 18px 20px;
+}
+.single .hentry {
+	margin: 0 0 36px 0;
+}
+.page-title {
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0 0 36px 0;
+}
+.page-title span {
+	color: #333;
+	font-size: 16px;
+	font-style: italic;
+	font-weight: normal;
+}
+.page-title a:link,
+.page-title a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.page-title a:active,
+.page-title a:hover {
+	color: #ff4b33;
+}
+#content .entry-title {
+	color: #000;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 1.3em;
+	margin-bottom: 0;
+}
+.entry-title a:link,
+.entry-title a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.entry-title a:active,
+.entry-title a:hover {
+	color: #ff4b33;
+}
+.entry-meta {
+	color: #888;
+	font-size: 12px;
+}
+.entry-meta abbr,
+.entry-utility abbr {
+	border: none;
+}
+.entry-meta abbr:hover,
+.entry-utility abbr:hover {
+	border-bottom: 1px dotted #666;
+}
+.entry-content,
+.entry-summary {
+	clear: both;
+	padding: 12px 0 0 0;
+}
+#content .entry-summary p:last-child {
+	margin-bottom: 12px;
+}
+.entry-content fieldset {
+	border: 1px solid #e7e7e7;
+	margin: 0 0 24px 0;
+	padding: 24px;
+}
+.entry-content fieldset legend {
+	background: #fff;
+	color: #000;
+	font-weight: bold;
+	padding: 0 24px;
+}
+.entry-content input {
+	margin: 0 0 24px 0;
+}
+.entry-content input.file,
+.entry-content input.button {
+	margin-right: 24px;
+}
+.entry-content label {
+	color: #888;
+	font-size: 12px;
+}
+.entry-content select {
+	margin: 0 0 24px 0;
+}
+.entry-content sup,
+.entry-content sub {
+	font-size: 10px;
+}
+.entry-content blockquote.left {
+	float: left;
+	margin-left: 0;
+	margin-right: 24px;
+	text-align: right;
+	width: 33%;
+}
+.entry-content blockquote.right {
+	float: right;
+	margin-left: 24px;
+	margin-right: 0;
+	text-align: left;
+	width: 33%;
+}
+.page-link {
+	clear: both;
+	color: #000;
+	font-weight: bold;
+	margin: 0 0 22px 0;
+	word-spacing: 0.5em;
+}
+.page-link a:link,
+.page-link a:visited {
+	background: #f1f1f1;
+	color: #333;
+	font-weight: normal;
+	padding: 0.5em 0.75em;
+	text-decoration: none;
+}
+.home .sticky .page-link a {
+	background: #d9e8f7;
+}
+.page-link a:active,
+.page-link a:hover {
+	color: #ff4b33;
+}
+body.page .edit-link {
+	clear: both;
+	display: block;
+}
+#entry-author-info {
+	background: #f2f7fc;
+	border-top: 4px solid #000;
+	clear: both;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 24px 0;
+	overflow: hidden;
+	padding: 18px 20px;
+}
+#entry-author-info #author-avatar {
+	background: #fff;
+	border: 1px solid #e7e7e7;
+	float: left;
+	height: 60px;
+	margin: 0 -104px 0 0;
+	padding: 11px;
+}
+#entry-author-info #author-description {
+	float: left;
+	margin: 0 0 0 104px;
+}
+#entry-author-info h2 {
+	color: #000;
+	font-size: 100%;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+.entry-utility {
+	clear: both;
+	color: #888;
+	font-size: 12px;
+	line-height: 18px;
+}
+.entry-meta a,
+.entry-utility a {
+	color: #888;
+}
+.entry-meta a:hover,
+.entry-utility a:hover {
+	color: #ff4b33;
+}
+#content .video-player {
+	padding: 0;
+}
+
+
+/* =3DAsides
+-------------------------------------------------------------- */
+
+.home #content .format-aside p,
+.home #content .category-asides p {
+	font-size: 14px;
+	line-height: 20px;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+.home .hentry.format-aside,
+.home .hentry.category-asides {
+	padding: 0;
+}
+.home #content .format-aside .entry-content,
+.home #content .category-asides .entry-content {
+	padding-top: 0;
+}
+
+
+/* =3DGallery listing
+-------------------------------------------------------------- */
+
+.format-gallery .size-thumbnail img,
+.category-gallery .size-thumbnail img {
+	border: 10px solid #f1f1f1;
+	margin-bottom: 0;
+}
+.format-gallery .gallery-thumb,
+.category-gallery .gallery-thumb {
+	float: left;
+	margin-right: 20px;
+	margin-top: -4px;
+}
+.home #content .format-gallery .entry-utility,
+.home #content .category-gallery .entry-utility {
+	padding-top: 4px;
+}
+
+
+/* =3DAttachment pages
+-------------------------------------------------------------- */
+
+.attachment .entry-content .entry-caption {
+	font-size: 140%;
+	margin-top: 24px;
+}
+.attachment .entry-content .nav-previous a:before {
+	content: '\2190\00a0';
+}
+.attachment .entry-content .nav-next a:after {
+	content: '\00a0\2192';
+}
+
+
+/* =3DImages
+-------------------------------------------------------------- */
+
+/*
+Resize images to fit the main content area.
+- Applies only to images uploaded via WordPress by targeting size-* classes.
+- Other images will be left alone. Use "size-auto" class to apply to other=
+ images.
+*/
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img {
+	max-width: 100%; /* When images are too wide for containing element, force=
+ them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect=
+ ratio. */
+}
+.alignleft,
+img.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 24px;
+	margin-top: 4px;
+}
+.alignright,
+img.alignright {
+	display: inline;
+	float: right;
+	margin-left: 24px;
+	margin-top: 4px;
+}
+.aligncenter,
+img.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+img.alignleft,
+img.alignright,
+img.aligncenter {
+	margin-bottom: 12px;
+}
+.wp-caption {
+	background: #f1f1f1;
+	line-height: 18px;
+	margin-bottom: 20px;
+	max-width: 632px !important; /* prevent too-wide images from breaking layo=
+ut */
+	padding: 4px;
+	text-align: center;
+}
+.wp-caption img {
+	margin: 5px 5px 0;
+}
+.wp-caption p.wp-caption-text {
+	color: #888;
+	font-size: 12px;
+	margin: 5px;
+}
+.wp-smiley {
+	margin: 0;
+}
+.gallery {
+	margin: 0 auto 18px;
+}
+.gallery .gallery-item {
+	float: left;
+	margin-top: 0;
+	text-align: center;
+	width: 33%;
+}
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+.gallery img {
+	border: 2px solid #cfcfcf;
+}
+.gallery-columns-2 .attachment-medium {
+	max-width: 92%;
+	height: auto;
+}
+.gallery-columns-4 .attachment-thumbnail {
+	max-width: 84%;
+	height: auto;
+}
+.gallery .gallery-caption {
+	color: #888;
+	font-size: 12px;
+	margin: 0 0 12px;
+}
+.gallery dl {
+	margin: 0;
+}
+.gallery img {
+	border: 10px solid #f1f1f1;
+}
+.gallery br+br {
+	display: none;
+}
+#content .attachment img {/* single attachment images should be centered */
+	display: block;
+	margin: 0 auto;
+}
+
+
+/* =3DNavigation
+-------------------------------------------------------------- */
+
+.navigation {
+	color: #888;
+	font-size: 12px;
+	line-height: 18px;
+	overflow: hidden;
+}
+.navigation a:link,
+.navigation a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.navigation a:active,
+.navigation a:hover {
+	color: #ff4b33;
+}
+.nav-previous {
+	float: left;
+	width: 50%;
+}
+.nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+#nav-above {
+	margin: 0 0 18px 0;
+}
+#nav-above {
+	display: none;
+}
+.paged #nav-above,
+.single #nav-above {
+	display: block;
+}
+#nav-below {
+	margin: -18px 0 0 0;
+}
+
+
+/* =3DComments
+-------------------------------------------------------------- */
+#comments {
+	clear: both;
+}
+#comments .navigation {
+	padding: 0 0 18px 0;
+}
+h3#comments-title,
+h3#reply-title {
+	color: #000;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 0;
+}
+h3#comments-title {
+	padding: 24px 0;
+}
+.commentlist {
+	list-style: none;
+	margin: 0;
+}
+.commentlist li.comment {
+	border-bottom: 1px solid #e7e7e7;
+	line-height: 24px;
+	margin: 0 0 24px 0;
+	padding: 0 0 0 56px;
+	position: relative;
+}
+.commentlist li:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+#comments .comment-body ul,
+#comments .comment-body ol {
+	margin-bottom: 18px;
+}
+#comments .comment-body p:last-child {
+	margin-bottom: 6px;
+}
+#comments .comment-body blockquote p:last-child {
+	margin-bottom: 24px;
+}
+.commentlist ol {
+	list-style: decimal;
+}
+.commentlist .avatar {
+	position: absolute;
+	top: 4px;
+	left: 0;
+}
+.comment-author {
+}
+.comment-author cite {
+	color: #000;
+	font-style: normal;
+	font-weight: bold;
+}
+.comment-author .says {
+	font-style: italic;
+}
+.comment-meta {
+	font-size: 12px;
+	margin: 0 0 18px 0;
+}
+.comment-meta a:link,
+.comment-meta a:visited {
+	color: #888;
+	text-decoration: none;
+}
+.comment-meta a:active,
+.comment-meta a:hover {
+	color: #ff4b33;
+}
+.commentlist .even {
+}
+.commentlist .bypostauthor {
+}
+.reply {
+	font-size: 12px;
+	padding: 0 0 24px 0;
+}
+.reply a,
+a.comment-edit-link {
+	color: #888;
+}
+.reply a:hover,
+a.comment-edit-link:hover {
+	color: #ff4b33;
+}
+.commentlist .children {
+	list-style: none;
+	margin: 0;
+}
+.commentlist .children li {
+	border: none;
+	margin: 0;
+}
+.nopassword,
+.nocomments {
+	display: none;
+}
+#comments .pingback {
+	border-bottom: 1px solid #e7e7e7;
+	margin-bottom: 18px;
+	padding-bottom: 18px;
+}
+.commentlist li.comment+li.pingback {
+	margin-top: -6px;
+}
+#comments .pingback p {
+	color: #888;
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	margin: 0;
+}
+#comments .pingback .url {
+	font-size: 13px;
+	font-style: italic;
+}
+
+/* Comments form */
+input[type=3Dsubmit] {
+	color: #333;
+}
+#respond {
+	border-top: 1px solid #e7e7e7;
+	margin: 24px 0;
+	overflow: hidden;
+	position: relative;
+}
+#respond p {
+	margin: 0;
+}
+#respond .comment-notes {
+	margin-bottom: 1em;
+}
+.form-allowed-tags {
+	line-height: 1em;
+}
+.children #respond {
+	margin: 0 48px 0 0;
+}
+h3#reply-title {
+	margin: 18px 0;
+}
+#comments-list #respond {
+	margin: 0 0 18px 0;
+}
+#comments-list ul #respond {
+	margin: 0;
+}
+#cancel-comment-reply-link {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 18px;
+}
+#respond .required {
+	color: #ff4b33;
+	font-weight: bold;
+}
+#respond label {
+	color: #888;
+	font-size: 12px;
+}
+#respond input {
+	margin: 0 0 9px;
+	width: 98%;
+}
+#respond textarea {
+	width: 98%;
+}
+#respond .form-allowed-tags {
+	color: #888;
+	font-size: 12px;
+	line-height: 18px;
+}
+#respond .form-allowed-tags code {
+	font-size: 11px;
+}
+#respond .form-submit {
+	margin: 12px 0;
+}
+#respond .form-submit input {
+	font-size: 14px;
+	width: auto;
+}
+
+
+/* =3DWidget Areas
+-------------------------------------------------------------- */
+
+.widget-area ul {
+	list-style: none;
+	margin-left: 0;
+}
+.widget-area ul ul {
+	list-style: square;
+	margin-left: 1.3em;
+}
+.widget-area select {
+	max-width: 100%;
+}
+.widget_search #s {/* This keeps the search inputs in line */
+	width: 60%;
+}
+.widget_search label {
+	display: none;
+}
+.widget-container {
+	margin: 0 0 18px 0;
+}
+.widget-title {
+	color: #222;
+	font-weight: bold;
+}
+.widget-area a:link,
+.widget-area a:visited {
+	text-decoration: none;
+}
+.widget-area a:active,
+.widget-area a:hover {
+	text-decoration: underline;
+}
+.widget-area .entry-meta {
+	font-size: 11px;
+}
+#wp_tag_cloud div {
+	line-height: 1.6em;
+}
+#wp-calendar {
+	width: 100%;
+}
+#wp-calendar caption {
+	color: #222;
+	font-size: 14px;
+	font-weight: bold;
+	padding-bottom: 4px;
+	text-align: left;
+}
+#wp-calendar thead {
+	font-size: 11px;
+}
+#wp-calendar thead th {
+}
+#wp-calendar tbody {
+	color: #aaa;
+}
+#wp-calendar tbody td {
+	background: #f5f5f5;
+	border: 1px solid #fff;
+	padding: 3px 0 2px;
+	text-align: center;
+}
+#wp-calendar tbody .pad {
+	background: none;
+}
+#wp-calendar tfoot #next {
+	text-align: right;
+}
+.widget_rss a.rsswidget {
+	color: #000;
+}
+.widget_rss a.rsswidget:hover {
+	color: #ff4b33;
+}
+.widget_rss .widget-title img {
+	width: 11px;
+	height: 11px;
+}
+
+/* Main sidebars */
+#main .widget-area ul {
+	margin-left: 0;
+	padding: 0 20px 0 0;
+}
+#main .widget-area ul ul {
+	border: none;
+	margin-left: 1.3em;
+	padding: 0;
+}
+#primary {
+}
+#secondary {
+}
+
+/* Footer widget areas */
+#footer-widget-area {
+}
+
+
+/* =3DFooter
+-------------------------------------------------------------- */
+
+#footer {
+	margin-bottom: 20px;
+}
+#colophon {
+	border-top: 4px solid #000;
+	margin-top: -4px;
+	overflow: hidden;
+	padding: 18px 0;
+}
+#site-info {
+	font-weight: bold;
+}
+#site-info a {
+	color: #000;
+	text-decoration: none;
+}
+#site-generator {
+	font-style: italic;
+	position: relative;
+}
+#site-generator a {
+	background: url(images/wordpress.png) center left no-repeat;
+	color: #666;
+	display: inline-block;
+	line-height: 16px;
+	padding-left: 20px;
+	text-decoration: none;
+}
+#site-generator a:hover {
+	text-decoration: underline;
+}
+img#wpstats {
+	display: block;
+	margin: 0 auto 10px;
+}
+
+
+/* =3DMobile Safari ( iPad, iPhone and iPod Touch )
+-------------------------------------------------------------- */
+
+pre {
+	-webkit-text-size-adjust: 140%;
+}
+code {
+	-webkit-text-size-adjust: 160%;
+}
+#access,
+.entry-meta,
+.entry-utility,
+.navigation,
+.widget-area {
+	-webkit-text-size-adjust: 120%;
+}
+#site-description {
+	-webkit-text-size-adjust: none;
+}
+
+
+/* =3DPrint Style
+-------------------------------------------------------------- */
+
+@media print {
+	body {
+		background: none !important;
+	}
+	#wrapper {
+		clear: both !important;
+		display: block !important;
+		float: none !important;
+		position: relative !important;
+	}
+	#header {
+		border-bottom: 2pt solid #000;
+		padding-bottom: 18pt;
+	}
+	#colophon {
+		border-top: 2pt solid #000;
+	}
+	#site-title,
+	#site-description {
+		float: none;
+		line-height: 1.4em;
+		margin: 0;
+		padding: 0;
+	}
+	#site-title {
+		font-size: 13pt;
+	}
+	.entry-content {
+		font-size: 14pt;
+		line-height: 1.6em;
+	}
+	.entry-title {
+		font-size: 21pt;
+	}
+	#access,
+	#branding img,
+	#respond,
+	.comment-edit-link,
+	.edit-link,
+	.navigation,
+	.page-link,
+	.widget-area {
+		display: none !important;
+	}
+	#container,
+	#header,
+	#footer {
+		margin: 0;
+		width: 100%;
+	}
+	#content,
+	.one-column #content {
+		margin: 24pt 0 0;
+		width: 100%;
+	}
+	.wp-caption p {
+		font-size: 11pt;
+	}
+	#site-info,
+	#site-generator {
+		float: none;
+		width: auto;
+	}
+	#colophon {
+		width: auto;
+	}
+	img#wpstats {
+		display: none;
+	}
+	#site-generator a {
+		margin: 0;
+		padding: 0;
+	}
+	#entry-author-info {
+		border: 1px solid #e7e7e7;
+	}
+	#main {
+		display: inline;
+	}
+	.home .sticky {
+		border: none;
+	}
+}
+------=_NextPart_000_0000_5C361841.94A57A19
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.assoc-amazon.com/e/ir?t=jamesstephens-20&l=as2&o=1&a=B000BTL0OA
+
+R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAQAIBRAA7
+------=_NextPart_000_0000_5C361841.94A57A19
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: https://www.paypal.com/en_US/i/btn/x-click-but04.gif
+
+R0lGODlhPgAfAPf/AP/79f/15f+tLZ2jpxs2ZP7PhP7Vlf7CVf+xNf+/X//DZv/y3ezlyubVsOHd
+xv+6RP+rKP/Kdv+1Pe3XolNje/+yOf/89v/mvv/u0sDMz7e5qf/px//lu5OquMbIvTpsnoumvJKb
+qP/68b3BxSlCbOnm1lJ9pKivpMG9rTVpnHSWsv/gr//57XiVqf/GaiM8Z/Px6//57P/qu8bO1P7w
+y8fS1au9yv+oI//NeEJyof/dqP714f/uxv+oIqSssnqbuf/isP/46v/qyf+uL/7NfvDhuKm6xdXc
+3WJrdzJIbv7ltWKJrP+9TFZ9n//itf+2RFJlge7r4//9+Gp6lHaFnP+0Opmww/7XjV6Gq9PTy//t
+zv7cnf+sK/7lsv/uyGNyhm6OpK60uf+wMkx6pezMjf/67tPRw46ou9vh4//68P/ZlP///kBUdrW6
+tffNg/7bnISivf+zPkVae2iNrICMnv7dof/w1P/v1f7Rhv7SgvrSiP/claS2vDdNc3OBlEd2pD5T
+dT5woP/x2f+9SvvZlf/21lpsiLa7vmuRsv/UkXh8fV6Fpv/55kFWef7cpLzJ0Upef/7Ym4eaov/U
+hv/PfcLLxUBxn0xggC5Gbv/26P/9+v/26TJnm//9+/+pJv7bov/++/+nIv+qJv/57//rztzg1ae5
+w4iUpf+8V7rHyfLq1ml0gm14h7Gokvj16bq+v19wiYCfuMTGxv7nt8jKw6/Cz+CzX/XVk//Ib/bY
+nv7Xmfvrxrqhav/pwvjx2La7wvjbo/ncouXMlO/u6ISQoKywq+Dd0Iyksf7gqf/iof3HYNXMrv/h
+nv/Ph42Rj/b18JmWim+RrP7Ics/Krvz58v/36fPx5Pnx1v/w0GeKpP+aA+Dk4GiPs62ztv/36v/T
+kqO0t8/PzdTZznB/lt3CjFVnhNra2e/o0UdYdf/357DByfjy4f/emLK3vVWAplWAqNDV0v+3Sf/S
+jv+yPP/Eav+qJ/+tMP/Le/+9Wf/cqP/rzf/kvP/bpRIzZv+ZAP///yH5BAEAAP8ALAAAAAA+AB8A
+AAj/AP8J/OevoMGDCBMqXMhQoTZ//9YMJGhASIBMGDNqzLRpk8aOGEFu9CjSI0eSJk1iDCDEAESB
+/kixkKKpps1OOEHpxGmzp8+bOXd2+lkT51CbUliQ8gfqnwEAUKNCtUBVilWrVKlK3Qogq4WrUrxa
+mCp27NZvBDGMWst2VBoRMKhgwkSiz5QZIgCI2Mu3714Az7j9CRRozA80ef1Ss/EHzhERbUdpKbhg
+Y6Zq3mKYg0LgxQsCmKjAKFOGhWkWMVIHSc2iDJo/nD584JTDCow0pVuXGQaHE5woQappXFDwzoLj
+yBfsqHaIbogR4wg0+tWNyjhi7aKMoCMrXbVwxAYY/yFcawYiTlhm2Ij148wjV9uwfLARIEDyBRgK
+CsHAv78d5SEQYIg1ZfhAgBynXAJIIy/0EUKAUzCyTjkEnAJCCiqQBgInc4CAxTsmpDDGI0dYMgY8
+CwhyR38YCFHQBRvEGKMQWthxjh8CvhIGJASMk4UPh/hwiYBhEAAJI92AVsJ5KmSgzhicWFFDKhnY
+8A4nHWSAnip2aCGEjBtcUJATHJRZJoxaeEDhC5gQQAAstBjjAzF+yPECMVkQ0IcxjRAwwA5QppBD
+bCqUUooRZ8QyxgemmMKJCtgI0csFZnLgREE6rKDpCkA4IUMvA/TJBhRfhMCAGZC8UA4sbLZxDgEk
+4P/Ihi/iBJLCIkuowMc1lbjzQTRzpOBOKmdgycMFSgCx6Qo6FBTJJ9B+4ggyQMjACgmYoECDFzzs
+wgoBXxRiBiZJOHBOH26+UEwhfHzwhwM08MCDF4tgWUgllsxRyRwftDELEDo4Eu0nuhR0jwEIIxxJ
+HUAAImADs3QxSwPfXjKAIQfSwABnBEARbwuctFBExF0UkQ0n0YBT7zEeWGLCMsjUEUnCBiQiTUEV
+SENEAQXgIY8ab1CQBDTBbPHGFnW00gcJ6KyCjjMyFIHjCyjI0IUkTWgAjNFIn2BCINmA0UQb0zQh
+SS5qJIIHzwUQoYAABfUgSjwJKOACLhHg4IYbeVD/gsPflORBBjmE7HELO8lMgAQBSDCzxxV66EGJ
+34BPQoYwe+xBiBqQ9x0BLi7QowA+T9zQQ0Gh3KD6DZ5AMAQCVUhQBQJDCPC6BA8MwsTuByjDS2e2
+KHPAAxJIUIEYtd/+wO5MDPLA87MPAYEnq6seCurVsw4BF0PUzgUE9UAggBgIVFBF7A88gcQLiijD
+hAS0ew+++ORXYH8FCIiB/PfUZ3+9P6nLnic8UY96iGKArCPg9rjAPQTg7nnFEwMXDIjABIaPgd8D
+HwWzt7r/EbCAIAyhCEW4vdfFTnbI0+AIV8jCEHqiIAKwhwxnSMMa2tAeCEDAPKpgPwTc8IdArCHc
+//xRgXkY8YhITGI/ltiPI8bhiVCMQxKN2MQpWtGKFSjIE+LBxS568Yv96GIY47FELjIxjGdkohnH
++MU2dvEJBUEFPuZIxzrasR90xCMe8aHHOe7Rj3wEZCDtSEg6oqIgCqCHIhfJyEb2Y5GPfCQ9IqlI
+STJxkpW8ZCM3uUgFFCQC9wilKEdJyn6I0pSmvAcqQ7lKVbrylaSMJSkjUJBmyOOWuMylLs+IyyXe
+sh+/lAcvfSlMYurymLdsRi35wcxmOvOZ0IymNKdJzWYq8x+ocMI+tsnNbnrzm+AMpzjHuQ8noOIf
+o/CHAS4gBH1oQR/wjKc850nPetrznvF8pxAu4CySUcAkAYngRz4GStCCGvSgCE2oQg3Kj0Qk4CUC
+AQBBGkLRilpUIf+Q6D8CAgA7
+------=_NextPart_000_0000_5C361841.94A57A19
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://1.gravatar.com/avatar/17456a53edd0c616e6d1d287062289e4?s=40&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&r=G
+
+iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAADM0lEQVRYhc1XbUvzPBg9SdvUSbVB
+cC2zpcqGiB/2/3+A/ge/uIEoIr6MMafMRXt/ykhr0ibd7ue5D5R2Jy/nSpaTKyHX19cl/mH4ZflP
+xwefEPJ/x9AICgDqLJZlufmtvl05XX9dOLrF4IzQLZuu3F8JULdsunJ+/W+SMPE23C5n0Nkk9fqE
+EHDOcXh4CMYYCCFYrVZYLBaYz+f4+flx6r8OX0YthXXfclTyW5anaYosyxAEgbZzIQQeHh7w+Pio
+nWF1sCbO13WsBqGD53k4Pz8H57wSdH0gQRCgKAocHR3h5uYGQohWnTpHTVuEaX1QSnFxcQHOeaWe
+rq18Hxwc4PLyEpRS5y1n42LTjKmNCSHIsgxxHFe4ensdF0URTk9PtRpNoISQSodNTxAEODk5qdSt
+B6QzkeSSJEGv12vVUR+nffD4+BiU2jUx7XH9ft9F0i3VxXG8VforyxKcc6dU17pRq+j1er/KbEyi
+fu/t7TVqGFOdjUnk39tmiCbOdolI+LpOTFiv12CMWQVk6lMI0aqjwmk4y+XSuq4p2Pf3dxdJN5O8
+vr5ubZK3tze386BLJpnNZvj8/Oxskq+vL7y8vPwKSjdBvzKJCfXGt7e3lXJbkwDAZDLB9/d3m2QF
+1HZHl89iscBkMtEGYsouAHB3d4fZbOakRQjRn2ba8PT0hPV6jeFwaDxqSQghMJ1O8fz83EWq+6VJ
+CLFxdVO95XKJ1WpVEXUxCbm6umq8GKvnPADY39/H2dlZ5URjg/l8jul0io+PD6d2TiZJkgTj8Xhz
+FgTsTcI5x3g8RpIkTgFa30myLEOe586pTeU8z8NwOARjDPf391a6VplkMBhUgtsGhBDkeY7BYGBV
+v9UkcRyjKIpKua6eCwcARVFU1nGnTOL7PkajkTa4XXCj0Qie53XPJHmeb04vgPvRqo0LwxB5njeF
+YM4kYRgiTdMKVxfaBZemKcIwdL+TJEnifLjsAkpp49ajNQkA9Pv9xjW0jUnqnLxIWZskiqLN2jMJ
+mALvwjHGEEVRRa/RJKY0tmuTqJxJU5tJoigybsp/K0iTpnYG5fXyv4RJU2sSdf2pfP29S44xpjXJ
+H9OtXHW4Z0vjAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_5C361841.94A57A19
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://1.gravatar.com/avatar/dde3a5048e456c451b7c518857e1818c?s=40&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&r=G
+
+iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAADM0lEQVRYhc1XbUvzPBg9SdvUSbVB
+cC2zpcqGiB/2/3+A/ge/uIEoIr6MMafMRXt/ykhr0ibd7ue5D5R2Jy/nSpaTKyHX19cl/mH4ZflP
+xwefEPJ/x9AICgDqLJZlufmtvl05XX9dOLrF4IzQLZuu3F8JULdsunJ+/W+SMPE23C5n0Nkk9fqE
+EHDOcXh4CMYYCCFYrVZYLBaYz+f4+flx6r8OX0YthXXfclTyW5anaYosyxAEgbZzIQQeHh7w+Pio
+nWF1sCbO13WsBqGD53k4Pz8H57wSdH0gQRCgKAocHR3h5uYGQohWnTpHTVuEaX1QSnFxcQHOeaWe
+rq18Hxwc4PLyEpRS5y1n42LTjKmNCSHIsgxxHFe4ensdF0URTk9PtRpNoISQSodNTxAEODk5qdSt
+B6QzkeSSJEGv12vVUR+nffD4+BiU2jUx7XH9ft9F0i3VxXG8VforyxKcc6dU17pRq+j1er/KbEyi
+fu/t7TVqGFOdjUnk39tmiCbOdolI+LpOTFiv12CMWQVk6lMI0aqjwmk4y+XSuq4p2Pf3dxdJN5O8
+vr5ubZK3tze386BLJpnNZvj8/Oxskq+vL7y8vPwKSjdBvzKJCfXGt7e3lXJbkwDAZDLB9/d3m2QF
+1HZHl89iscBkMtEGYsouAHB3d4fZbOakRQjRn2ba8PT0hPV6jeFwaDxqSQghMJ1O8fz83EWq+6VJ
+CLFxdVO95XKJ1WpVEXUxCbm6umq8GKvnPADY39/H2dlZ5URjg/l8jul0io+PD6d2TiZJkgTj8Xhz
+FgTsTcI5x3g8RpIkTgFa30myLEOe586pTeU8z8NwOARjDPf391a6VplkMBhUgtsGhBDkeY7BYGBV
+v9UkcRyjKIpKua6eCwcARVFU1nGnTOL7PkajkTa4XXCj0Qie53XPJHmeb04vgPvRqo0LwxB5njeF
+YM4kYRgiTdMKVxfaBZemKcIwdL+TJEnifLjsAkpp49ajNQkA9Pv9xjW0jUnqnLxIWZskiqLN2jMJ
+mALvwjHGEEVRRa/RJKY0tmuTqJxJU5tJoigybsp/K0iTpnYG5fXyv4RJU2sSdf2pfP29S44xpjXJ
+H9OtXHW4Z0vjAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_5C361841.94A57A19
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://1.gravatar.com/avatar/3c3c16f034b10ff8b013ce951bb38d8c?s=40&d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&r=G
+
+iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAADM0lEQVRYhc1XbUvzPBg9SdvUSbVB
+cC2zpcqGiB/2/3+A/ge/uIEoIr6MMafMRXt/ykhr0ibd7ue5D5R2Jy/nSpaTKyHX19cl/mH4ZflP
+xwefEPJ/x9AICgDqLJZlufmtvl05XX9dOLrF4IzQLZuu3F8JULdsunJ+/W+SMPE23C5n0Nkk9fqE
+EHDOcXh4CMYYCCFYrVZYLBaYz+f4+flx6r8OX0YthXXfclTyW5anaYosyxAEgbZzIQQeHh7w+Pio
+nWF1sCbO13WsBqGD53k4Pz8H57wSdH0gQRCgKAocHR3h5uYGQohWnTpHTVuEaX1QSnFxcQHOeaWe
+rq18Hxwc4PLyEpRS5y1n42LTjKmNCSHIsgxxHFe4ensdF0URTk9PtRpNoISQSodNTxAEODk5qdSt
+B6QzkeSSJEGv12vVUR+nffD4+BiU2jUx7XH9ft9F0i3VxXG8VforyxKcc6dU17pRq+j1er/KbEyi
+fu/t7TVqGFOdjUnk39tmiCbOdolI+LpOTFiv12CMWQVk6lMI0aqjwmk4y+XSuq4p2Pf3dxdJN5O8
+vr5ubZK3tze386BLJpnNZvj8/Oxskq+vL7y8vPwKSjdBvzKJCfXGt7e3lXJbkwDAZDLB9/d3m2QF
+1HZHl89iscBkMtEGYsouAHB3d4fZbOakRQjRn2ba8PT0hPV6jeFwaDxqSQghMJ1O8fz83EWq+6VJ
+CLFxdVO95XKJ1WpVEXUxCbm6umq8GKvnPADY39/H2dlZ5URjg/l8jul0io+PD6d2TiZJkgTj8Xhz
+FgTsTcI5x3g8RpIkTgFa30myLEOe586pTeU8z8NwOARjDPf391a6VplkMBhUgtsGhBDkeY7BYGBV
+v9UkcRyjKIpKua6eCwcARVFU1nGnTOL7PkajkTa4XXCj0Qie53XPJHmeb04vgPvRqo0LwxB5njeF
+YM4kYRgiTdMKVxfaBZemKcIwdL+TJEnifLjsAkpp49ajNQkA9Pv9xjW0jUnqnLxIWZskiqLN2jMJ
+mALvwjHGEEVRRa/RJKY0tmuTqJxJU5tJoigybsp/K0iTpnYG5fXyv4RJU2sSdf2pfP29S44xpjXJ
+H9OtXHW4Z0vjAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_5C361841.94A57A19
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sns.ias.edu/~jns/wp/wp-content/themes/twentyten/images/wordpress.png
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAAvNJREFUeNpcU19IU3EUPvdutvlnrm0qzvlnbsnGWNs08TUFRVGoHnzQ
+BwchBEJPvfjSYw++FPQq9FaEClJvUUxIhExWSwNzbU1dg6Wyua3rtppzfefHgujCt9177jnf7zvf
+OVdaWFig/y4HcAe4DviqsU/AW2ARCP+brOaf9vZ28ZBIJO7Jsny/p6dnx+v1ymq1+ifHz8/P5e3t
+7WuRSOTdxcXFA+Q/quaTVFVwCXjZ2Nhom5yclJF4JRwO0/HxMZVKJWptbSUQkt1ujywtLVVyuVwM
++TeB36rh4WEmeGgymdxTU1Odq6ur5t3dXVIUhSqVCkER5fN5isViVC6XTdPT03V7e3u/CoWCHXWv
+ZfxcRZJ/ZmZGu7m5qTObzaTVasntdpPH4xHAyaRSqah6WK3f7zeh5jbuXUww63Q6Qwg4R0dHyeFw
+EHoXnoyPj9PExARJkiRiyR9JES8WCh1cw7VMMNbb26tfW1sTLzUajZDOkhniyNpaoeBD8KN4jse/
+E9dwLRN0Q3b3wcEBpdNp4hbq6+vFiTBTkLlcLioVi5Q5PRUE0W9Ram5utuHWIlfHJNXU1BA7zydx
+G1wIY0VBV1cX1el01KBroFQqJabDbeFSMUH85OQk1tTURKyCC7EHVDw7Ix2K1tfXxSQsFotQFwqF
+eBpMwv3FmeAVgll2mmfOy9HS0kI2kESjUdrY2CA+y+fzkdVqpWAwSDCQibIIv2GCRczVC5lfWfLh
+4aGQzSPb398XvihQ09nRSXn8GwwG6u/vD3MN0p4wwWes53NsmDI4OKhgy4QS7rEI4/R6PSGZuOU0
+TMSyKcvLy2eoecq1fzcxgG27AROlkZGRLEZpTCaTdHR0RFhvQcJGIh5dWVlJQRUvxCxQFgT4OMpz
+c3PPAoGABh/NWCaTed/W1pYeGhrS9PX1FZD4BWaG8b4bK/x4fn7+Llots1r2pw5oAC4DBvTnGRgY
+uGU0Gj3ZbFZ8plCQwKk7W1tbL2DiDkK8EBlA+SPAAEnRWBexYUWvAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_5C361841.94A57A19
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=40
+
+=89PNG
+=1A
+=00=00=00
+IHDR=00=00=00(=00=00=00(=08=06=00=00=00=8C=FE=B8m=00=00=033IDATX=85=CDWmK=
+=F3<=18=3DI=DB=D4I=B5Ap-=B3=A5=CA=86=88=1F=F6=FF=7F=80=FE=07=BF=B8=81("=BE=
+=8C1=A7=CCE{=7F=CAHk=D2&=DD=EE=E7=B9=0F=94v'/=E7J=96=93+!=D7=D7=D7%=FEa=F8e=
+=F9O=C7=07=9F=10=F2=7F=C7=D0=08
+=00=EA,=96e=B9=F9=AD=BE]9]=7F]8=BA=C5=E0=8C=D0-=9B=AE=DC_	P=B7l=BAr~=FDo=92=
+0=F16=DC.g=D0=D9$=F5=FA=84=10p=CEqxx=08=C6=18=08!X=ADVX,=16=98=CF=E7=F8=F9=
+=F9q=EA=BF=0E_F-=85u=DFrT=F2[=96=A7i=8A,=CB=10=04=81=B6s!=04=1E=1E=1E=F0=F8=
+=F8=A8=9Dau=B0&=CE=D7u=AC=06=A1=83=E7y8??=07=E7=BC=12t} A=10=A0(
+=1C=1D=1D=E1=E6=E6=06B=88V=9D:GM[=84i}PJqqq=01=CEy=A5=9E=AE=AD|=1F=1C=1C=E0=
+=F2=F2=12=94R=E7-g=E3b=D3=8C=A9=8D	!=C8=B2=0Cq=1CW=B8z{=1D=17E=11NOO=B5=1AM=
+=A0=84=90J=87MO=10=04899=A9=D4=AD=07=A43=91=E4=92$A=AF=D7k=D5Q=1F=A7}=F0=F8=
+=F8=18=94=DA51=EDq=FD~=DFE=D2-=D5=C5q=BCU=FA+=CB=12=9Cs=A7T=D7=BAQ=AB=E8=F5=
+z=BF=CAlL=A2~=EF=ED=ED5j=18S=9D=8DI=E4=DF=DBf=88&=CEv=89H=F8=BANLX=AF=D7`=
+=8CY=05d=EAS=08=D1=AA=A3=C2i8=CB=E5=D2=BA=AE)=D8=F7=F7w=17I7=93=BC=BE=BEnm=
+=92=B7=B77=B7=F3=A0K&=99=CDf=F8=FC=FC=ECl=92=AF=AF/=BC=BC=BC=FC
+J7A=BF2=89	=F5=C6=B7=B7=B7=95r[=93=00=C0d2=C1=F7=F7w=9Bd=05=D4vG=97=CFb=B1=
+=C0d2=D1=06b=CA.=00pww=87=D9l=E6=A4E=08=D1=9Ff=DA=F0=F4=F4=84=F5z=8D=E1ph<j=
+I=08!0=9DN=F1=FC=FC=DCE=AA=FB=A5I=08=B1quS=BD=E5r=89=D5jU=11u1	=B9=BA=BAj=
+=BC=18=AB=E7<=00=D8=DF=DF=C7=D9=D9Y=E5Dc=83=F9|=8E=E9t=8A=8F=8F=0F=A7vN&I=
+=92=04=E3=F1xs=16=04=ECM=C29=C7x<F=92$N=01Z=DFI=B2,C=9E=E7=CE=A9M=E5<=CF=C3=
+p8=04c=0C=F7=F7=F7V=BAV=99d0=18T=82=DB=06=84=10=E4y=8E=C1``U=BF=D5$q=1C=A3(=
+=8AJ=B9=AE=9E=0B=07=00EQT=D6q=A7L=E2=FB>F=A3=916=B8]p=A3=D1=08=9E=E7u=CF$y=
+=9EoN/=80=FB=D1=AA=8D=0B=C3=10y=9E7=85`=CE$a=18"M=D3
+W=17=DA=05=97=A6)=C20t=BF=93$I=E2|=B8=EC=02Ji=E3=D6=A35	=00=F4=FB=FD=C65=B4=
+=8DI=EA=9C=BCHY=9B$=8A=A2=CD=DA3	=98=02=EF=C21=C6=10EQE=AF=D1$=A64=B6k=93=
+=A8=9CIS=9BI=A2(2n=CA=7F+H=93=A6v=06=E5=F5=F2=BF=84ISk=12u=FD=A9|=FD=BDK=8E=
+1=A65=C9=1F=D3=AD\u=B8gK=E3=00=00=00=00IEND=AEB`=82
+------=_NextPart_000_0000_5C361841.94A57A19--

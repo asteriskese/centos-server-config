@@ -1,0 +1,18 @@
+14:32 23/01/2015
+################
+[root@srv148 ~]# cat /var/spool/cron/*
+#Every 5 mins for testing only:
+#*/5 * * * * /opt/script/bk-script-gluster-storage
+#
+#Starting backup [gluster-storage] daily, at 2h15
+15 2 * * * /opt/script/bk-script-gluster-storage
+#
+#Starting backup [nginx configuration], daily, at 2h05
+05 2 * * * /opt/script/bk-script-nginx-config-all-instances
+#
+#Delete old file, 2 day in the past at 4h05:
+05 4 * * * /opt/script/delete-old-files
+#
+#Starting add new data into APACHE SOLR TCP-8989, every 5 mins:
+*/5 * * * * solr-8989-schedule-update
+[root@srv148 ~]# 

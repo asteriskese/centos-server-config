@@ -1,0 +1,317 @@
+Changli Gao (1):
+      iptables: fix the dead loop when meeting unknown options
+
+Florian Westphal (3):
+      libxt_conntrack: fix --ctdir save/dump output format
+      libxt_time: fix random --datestart skips
+      extensions: libxt_NFQUEUE: add v2 revision with --queue-bypass option
+
+JP Abgrall (1):
+      libxt_quota: make sure uint64 is not truncated
+
+Jan Engelhardt (218):
+      libxtables: change option precedence order to be intuitive
+      libxt_TOS: avoid an undesired overflowing computation
+      iptables: fix longopt reecognition and workaround getopt(3) behavior
+      Revert "Revert "libxtables: change option precedence order to be intuitive""
+      Merge branch 'master' of git://dev.medozas.de/iptables into m2
+      iptables: reset options at the start of each command
+      iptables: do not emit orig_opts twice
+      include: update files with headers from Linux 2.6.37-rc1
+      TPROXY: add support for revision 1
+      socket: add support for revision 1
+      build: fix globbing of extensions in other locales
+      libxt_owner: output numeric IDs when save is requested
+      Merge commit 'v1.4.10'
+      build: stop on error in subcommand
+      src: const annotations
+      xt_comment: remove redundant cast
+      src: use C99/POSIX types
+      iptables: abort on empty interface specification
+      xtables: reorder num_old substraction for clarity
+      ip[6]tables: only call match's parse function when option char is in range
+      ip[6]tables: only call target's parse function when option char is in range
+      extensions: remove no longer necessary default: cases
+      libxt_sctp: fix a typo
+      libipt_CLUSTERIP: const annotations
+      libxtables: do some option structure checking
+      libxt_quota: print negation when it has been selected
+      libxt_connlimit: reword help text to say prefix length
+      libxt_connlimit: add a --connlimit-upto option
+      libxt_connlimit: support for dstaddr-supporting revision 1
+      libxt_connlimit: remove duplicate member that caused size change
+      libxt_quota: clarifications on matching
+      iptables: improve error reporting with extension loading troubles
+      libxt_u32: enclose argument in quotes
+      xtables: set custom opts to NULL on free
+      iptables: warn when parameter limit is exceeded
+      iptables: remove bogus address-of
+      iptables: remove more redundant casts
+      iptables: do not print trailing whitespaces
+      src: collect do_command variables in a struct
+      src: move large default: block from do_command6 into its own function
+      src: share iptables_command_state across the two programs
+      src: deduplicate find_proto function
+      src: move OPT_FRAGMENT to the end so the list can be shared
+      src: put shared option flags into xshared
+      src: deduplicate and simplify implicit protocol extension loading
+      src: unclutter command_default function
+      src: move jump option handling from do_command6 into its own function
+      src: move match option handling from do_command6 into its own functions
+      iptables: fix error message for unknown options
+      iptables: fix segfault target option parsing
+      ip6tables: spacing fixes for -o argument
+      libxt_devgroup: option whitespace update following v1.4.10-49-g7386635
+      extensions: fix indent of vtable
+      doc: fix wrong sentence about negation in xt_limit
+      doc: fix misspelling of "field"
+      extensions: remove redundant init functions
+      Remove unused CVS expanded keywords
+      libip6t_dst: remove unimplemented --dst-not-strict
+      libip6t_hbh: remove unimplemented --hbh-not-strict
+      extensions: add missing checks for specific flags
+      libipt_ECN: set proper option flags
+      doc: mention other possible nf_loggers for TRACE
+      doc: fix odd partial sentence in libipt_TTL
+      libxt_quota: require --quota to be specified
+      doc: rateest options can be optional
+      libxtables: fix memory scribble beyond end of array
+      iptables: fix an inversion
+      doc: add VERSION section to manpages
+      extensions: add missing checks for specific flags (2)
+      libxtables: guided option parser
+      libxt_CHECKSUM: use guided option parser
+      libxt_socket: use guided option parser
+      libxtables: provide better final_check
+      libxt_CONNSECMARK: use guided option parser
+      libxtables: XTTYPE_UINT32 support
+      libxt_cpu: use guided option parser
+      libxtables: min-max option support
+      libxt_cluster: use guided option parser
+      libxtables: XTTYPE_UINT8 support
+      libip[6]t_HL: use guided option parser
+      libip[6]t_hl: use guided option parser
+      libxtables: XTTYPE_UINT32RC support
+      libip[6]t_ah: use guided option parser
+      libip6t_frag: use guided option parser
+      libxt_esp: use guided option parser
+      libxtables: XTTYPE_STRING support
+      libip[6]t_REJECT: use guided option parser
+      libip6t_dst: use guided option parser
+      libip6t_hbh: use guided option parser
+      libip[6]t_icmp: use guided option parser
+      libip6t_ipv6header: use guided option parser
+      libipt_ECN: use guided option parser
+      libipt_addrtype: use guided option parser
+      libxt_AUDIT: use guided option parser
+      libxt_CLASSIFY: use guided option parser
+      libxt_DSCP: use guided option parser
+      libxt_LED: use guided option parser
+      libxt_SECMARK: use guided option parser
+      libxt_TCPOPTSTRIP: use guided option parser
+      libxt_comment: use guided option parser
+      libxt_helper: use guided option parser
+      libxt_physdev: use guided option parser
+      libxt_pkttype: use guided option parser
+      libxt_state: use guided option parser
+      libxt_time: use guided option parser
+      libxt_u32: use guided option parser
+      doc: avoid duplicate entries in manpage
+      libxtables: XTTYPE_MARKMASK32 support
+      libxt_MARK: use guided option parser
+      libxt_CONNMARK: use guided option parser
+      libxtables: XTTYPE_UINT64 support
+      libxt_quota: use guided option parser
+      libxtables: linked-list name<->id map
+      libxt_devgroup: use guided option parser
+      libipt_realm: use guided option parser
+      libxtables: XTTYPE_UINT16RC support
+      libxt_length: use guided option parser
+      libxt_tcpmss: use guided option parser
+      libxtables: XTTYPE_UINT8RC support
+      libxtables: XTTYPE_UINT64RC support
+      libxt_connbytes: use guided option parser
+      libxtables: XTTYPE_UINT16 support
+      libxt_CT: use guided option parser
+      libxt_NFQUEUE: use guided option parser
+      libxt_TCPMSS: use guided option parser
+      libxtables: pass struct xt_entry_{match,target} to x6 parser
+      libxt_string: use guided option parser
+      libxtables: XTTYPE_SYSLOGLEVEL support
+      libip[6]t_LOG: use guided option parser
+      libxtables: XTTYPE_ONEHOST support
+      libxtables: XTTYPE_PORT support
+      libxt_TPROXY: use guided option parser
+      libipt_ULOG: use guided option parser
+      build: bump libxtables ABI version
+      libxt_TEE: use guided option parser
+      xtoptions: respect return value in xtables_getportbyname
+      libxt_TOS: use guided option parser
+      libxt_tos: use guided option parser
+      extensions: remove unused TOS code
+      libxtables: XTTYPE_PORTRC support
+      libxt_udp: use guided option parser
+      libxt_dccp: use guided option parser
+      libxt_tos: add inversion support back again
+      libxtables: fix assignment in wrong offset (XTTYPE_UINT*RC)
+      libxt_u32: add missing call to xtables_option_parse
+      extensions: remove bogus use of XT_GETOPT_TABLEEND
+      libxt_owner: remove ifdef IPT_COMM_OWNER
+      libxtables: output name of extension on rev detect failure
+      extensions: const annotations
+      libxt_statistic: streamline and document possible placement of negation
+      libxt_statistic: increase precision on create and dump
+      libxtables: XTTYPE_DOUBLE support
+      libxt_statistic: use guided option parser
+      libxt_IDLETIMER: use guided option parser
+      libxt_NFLOG: use guided option parser
+      libxtables: support for XTTYPE_PLENMASK
+      libxt_connlimit: use guided option parser
+      libxt_recent: use guided option parser
+      libxtables: do not overlay addr and mask parts, and cleanup
+      libxtables: flag invalid uses of XTOPT_PUT
+      libxtables: XTTYPE_PLEN support
+      libxt_hashlimit: use guided option parser
+      libxtables: XTTYPE_HOSTMASK support
+      libxt_policy: use guided option parser
+      libxt_owner: use guided option parser
+      libxt_osf: use guided option parser
+      libxt_multiport: use guided option parser
+      libipt_NETMAP: use guided option parser
+      libxt_limit: use guided option parser
+      libxtables: XTTYPE_PROTOCOL support
+      libxt_ipvs: use guided option parser
+      doc: S/DNAT allows to omit IP addresses
+      libxt_conntrack: use guided option parser
+      libip6t_mh: use guided option parser
+      libip6t_rt: use guided option parser
+      libxtables: XTTYPE_ETHERMAC support
+      libxt_mac: use guided option parser
+      libipt_CLUSTERIP: use guided option parser
+      libxt_iprange: use guided option parser
+      libipt_DNAT: use guided option parser
+      libipt_SNAT: use guided option parser
+      libipt_MASQUERADE: use guided option parser
+      libipt_REDIRECT: use guided option parser
+      libipt_SAME: use guided option parser
+      src: replace old IP*T_ALIGN macros
+      src: combine default_command functions
+      libxt_policy: option table fixes, improved error tracking
+      libxtables: avoid running into .also checks when option not used
+      libxt_policy: use XTTYPE_PROTOCOL type
+      libxtables: collapse double protocol parsing
+      libipt_[SD]NAT: flag up module name on error
+      libipt_[SD]NAT: avoid false error about multiple destinations specified
+      libxt_conntrack: correct printed module name
+      libxt_conntrack: fix assignment to wrong member
+      libxt_conntrack: resolve erroneous rev-2 port range message
+      libip6t_rt: rt-0-not-strict should take no arg
+      libxtables: retract _NE types and use a flag instead
+      libxt_quota: readd missing XTOPT_PUT request
+      libxtables: check for negative numbers in xtables_strtou*
+      libxt_rateest: streamline case display of units
+      doc: add some coded option examples to libxt_hashlimit
+      doc: make usage of libxt_rateest more obvious
+      doc: clarify that -p all is a special keyword only
+      doc: use .IP list for TCPMSS
+      doc: remove redundant .IP calls in libxt_time
+      libxt_ipvs: restore network-byte order
+      libxt_u32: --u32 option is required
+      libip6t_rt: restore --rt-type storing
+      libxtables: more detailed error message on multi-int parsing
+      libxtables: use uintmax for xtables_strtoul
+      libxtables: make multiint parser have greater range
+      libxtables: unclutter xtopt_parse_mint
+      libxtables: have xtopt_parse_mint interpret partially-spec'd ranges
+      libxt_NFQUEUE: avoid double attempt at parsing
+      libxt_NFQUEUE: add mutual exclusion between qnum and qbal
+      libxt_time: always ignore libc timezone
+      libxt_time: --utc and --localtz are mutually exclusive
+      libxt_time: deprecate --localtz option, document kernel TZ caveats
+
+Jozsef Kadlecsik (3):
+      Fix listing/saving the new revision of the SET target
+      Fix set match/target direction parser
+      SET target revision 2 added
+
+Li Yewang (1):
+      xtables: fix typo in error message of xtables_register_match()
+
+Lutz Jaenicke (2):
+      libipt_REDIRECT: "--to-ports" is not mandatory
+      libxt_devgroup: actually set XT_DEVGROUP_OPT_???GROUP flags
+
+Maciej Zenczykowski (20):
+      man pages: allow underscores in match and target names
+      mark newly opened fds as FD_CLOEXEC (close on exec)
+      xtables_ip6addr_to_numeric: fix typo in comment
+      xtables: delay (statically built) match/target initialization
+      v4: rename init_extensions() to init_extensions4()
+      v6: rename init_extensions() to init_extensions6()
+      xtables.h: init_extensions() no longer exists
+      v4: rename for_each_chain() to for_each_chain4()
+      v6: rename for_each_chain() to for_each_chain6()
+      v4: rename flush_entries() to flush_entries4()
+      v6: rename flush_entries() to flush_entries6()
+      v4: rename delete_chain() to delete_chain4()
+      v6: rename delete_chain() to delete_chain6()
+      v4: rename print_rule() to print_rule4()
+      v6: rename print_rule() to print_rule6()
+      v4: rename do_command() to do_command4()
+      v6: rename do_command() to do_command6()
+      move 'int line' definition from ip6?tables.c into xtables.c
+      convert ip6?tables-multi to actually use their own header files
+      Don't load ip6?_tables module when already loaded
+
+Maciej Żenczykowski (3):
+      Add --ipv4/-4 and --ipv6/-6 support to ip6?tables{,-restore}.
+      Move common parts of libext{4,6}.a into libext.a
+      combine ip6?tables-multi into xtables-multi
+
+Mark Montague (1):
+      iptables: documentation for iptables and ip6tables "security" tables
+
+Max Kellerman (1):
+      xtables: use strspn() to check if string needs to be quoted
+
+Pablo Neira Ayuso (1):
+      libxt_cluster: fix inversion in the cluster match
+
+Patrick McHardy (16):
+      Revert "libxtables: change option precedence order to be intuitive"
+      Merge branch 'master' of git://dev.medozas.de/iptables
+      extensions: libxt_conntrack: add support for specifying port ranges
+      extensions: add extension for devgroup match
+      Merge branch 'master' of git://dev.medozas.de/iptables
+      Merge branch 'master' of vishnu.netfilter.org:/data/git/iptables
+      Merge branch 'opts' of git://dev.medozas.de/iptables
+      Merge branch 'opts' of git://dev.medozas.de/iptables
+      Merge branch 'floating/opts' of git://dev.medozas.de/iptables
+      Merge branch 'opts' of git://dev.medozas.de/iptables
+      Merge branch 'opts' of git://dev.medozas.de/iptables
+      Merge branch 'master' of git://dev.medozas.de/iptables
+      Merge branch 'opts' of git://dev.medozas.de/iptables
+      Merge branch 'floating/opts' of git://dev.medozas.de/iptables
+      Merge branch 'master' of git://dev.medozas.de/iptables
+      Bump version to 1.4.11
+
+Rob Leslie (1):
+      iptables-restore: resolve confusing policy error message
+
+Stefan Tomanek (2):
+      ip(6)tables-multi: unify subcommand handling
+      iptables: add -C to check for existing rules
+
+Stephen Beahm (1):
+      libipt_REDIRECT: avoid dereference of uninitialized pointer
+
+Thomas Graf (2):
+      libxt_AUDIT: add AUDIT target
+      iptables: add manual page section for AUDIT target
+
+Wes Campaigne (4):
+      libxtables: avoid confusing use of ai_protocol=IPPROTO_IPV6
+      xtables: fix excessive memory allocation in host_to_ipaddr
+      xtables: fix the broken detection/removal of redundant addresses
+      xtables: use all IPv6 addresses resolved from a hostname
+

@@ -1,0 +1,55 @@
+﻿13:33 13/03/2015
+VMWARE IMAGE CLONE WITH PROBLEM
+################################
+#Backup:
+cp /etc/udev/rules.d/70-persistent-net.rules /opt/
+
+#Xoa:
+rm -rf /etc/udev/rules.d/70-persistent-net.rules
+
+#Reboot:
+reboot
+##################
+OLD NETWORK INFO:
+lo: 00:00 - 127.0.0.1/8
+wan-eth0: 00:0C:29:3A:AB:FD - 2.2.5.22/24
+lan-eth1: 00:0C:29:3A:AB:07 - 10.10.1.11/24
+
+NEW NETWORK INFO:
+lo: 00:00 - 127.0.0.1/8
+wan: 00:0C:29:F4:AE:19 - eth0
+lan: 00:0C:29:F4:AE:23 - eth1
+##################
+##################
+#CÁCH GIẢI QUYẾT NHANH NHẤT:
+#1:
+nano /etc/udev/rules.d/70-persistent-net.rules
+	TÌM MAC ADDR CŨ: XOÁ
+	TÌM MAC ADDR MỚI: GHI ĐÈ VÀO ifcfg-eth*
+#2:
+echo "HWADDR=00:0C:29:F4:AE:19" >>/etc/sysconfig/network-scripts/ifcfg-eth0
+echo "HWADDR=00:0C:29:F4:AE:23" >>/etc/sysconfig/network-scripts/ifcfg-eth1
+	TÌM MAC ADDR MỚI, APPEND VÀO
+##################
+##################
+Fix Problem:
+#ifconfig | grep "^eth"
+
+#Sample output: 
+	eth0 Link encap: Ethernet HWaddr <MAC>
+	eth1 Link encap: Ethernet HWaddr <MAC>
+	
+#Remove old MAC on (ifcfg-eth*)
+##Find out current MAC:
+	ifconfig -a | grep eth1 | grep HWaddr | awk '{print $5}'
+	ifconfig -a | grep eth2 | grep HWaddr | awk '{print $5}'
+	
+#Update eth0 with eth1 (new) MAC Addr
+#Update eth1 with eth2 (new) MAC Addr
+
+
+#Restart network services: 
+service network restart
+
+udev: device manager for linux kernel.
+udev load all moduls asynchronously in a different order

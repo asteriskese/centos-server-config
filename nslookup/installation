@@ -1,0 +1,7 @@
+11:35 AM 20/11/2014
+
+To install the nslookup in CentOS, simply run this command :
+
+yum install bind-utils
+
+http://www.ehowstuff.com/how-to-install-nslookup-on-centos/

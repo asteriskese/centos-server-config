@@ -1,0 +1,55 @@
+----------HBS FIX-GW1----------
+FIX-SERVER: 
+	IP  : 172.16.8.80
+	Port: 1368
+FIX-GW Account: 
+	User: 082.01GW
+	Pwd : <RSA>|912348
+TraderID: 082.01GW
+eth0: 10.176.11.127 - HBS
+eth1: 172.17.27.191 - HNX
+
+Must be route to HNXGW:129, 130
+#/home/iadmin/route-add-command
+-------------------------------
+
+
+----------HBS FIX-GW2----------
+FIX-SERVER: 
+	IP  : 172.16.8.80
+	Port: 1368
+FIX-GW Account: 
+	User: 082.01GW
+	Pwd : <RSA>|912348
+TraderID: 082.01GW
+eth0: 10.176.11.128 - HBS
+eth1: 172.17.27.192 - HNX
+
+Must be route to HNXGW:129, 130
+#/home/iadmin/route-add-command
+-------------------------------
+
+
+
+--FIX-NETWORK:
+MPLS(Main) : route add -net 172.16.8.0 netmask 255.255.255.0 gw 172.17.27.130 eth1
+MEGAWAN(Bk): route add -net 172.16.8.0 netmask 255.255.255.0 gw 172.17.27.129 eth1
+
+--GDTX-NETWORK:
+MPLS(Main) : route add -net 172.16.9.0 netmask 255.255.255.0 gw 172.17.27.130 eth1
+MEGAWAN(Bk): route add -net 172.16.9.0 netmask 255.255.255.0 gw 172.17.27.129 eth1
+
+
+
+
+
+
+
+
+
+##########################16:14 PM Mon/28/06/2010
+------------HBS FORUM------------
+WAN_FPTH  : 210.245.62.105 - eth1    
+LAN_SERVER: 10.176.1.15    - eth0
+------------HBS FORUM------------
+

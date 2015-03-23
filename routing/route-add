@@ -1,0 +1,36 @@
+16:31 PM Thu/17/06/2010
+
+==Adding network:
+--FIX-NETWORK:
+MEGAWAN(Bk): route add -net 172.16.8.0 netmask 255.255.255.0 gw 172.17.27.129 eth1
+MPLS(Main) : route add -net 172.16.8.0 netmask 255.255.255.0 gw 172.17.27.130 eth1
+
+route del -net 172.16.8.0 netmask 255.255.255.0 gw 172.17.27.130 eth1
+route del -net 172.16.8.0 netmask 255.255.255.0 gw 172.17.27.129 eth1
+route del -net 172.16.9.0 netmask 255.255.255.0 gw 172.17.27.130 eth1
+route del -net 172.16.9.0 netmask 255.255.255.0 gw 172.17.27.129 eth1
+
+--GDTX-NETWORK:
+MPLS(Main) : route add -net 172.16.9.0 netmask 255.255.255.0 gw 172.17.27.130 eth1
+MEGAWAN(Bk): route add -net 172.16.9.0 netmask 255.255.255.0 gw 172.17.27.129 eth1
+
+==Adding host:
+route add -host 172.16.8.80 gw 172.17.27.130 eth1
+
+#
+#
+#
+#
+--FIX-NETWORK:
+MEGAWAN(Bk): route add -net 172.16.8.0 netmask 255.255.255.0 gw 172.17.27.129 eth1
+MPLS(Main) : route add -net 172.16.8.0 netmask 255.255.255.0 gw 172.17.27.130 eth1
+             route del -net 172.16.8.0 netmask 255.255.255.0 gw 172.17.27.129 eth1
+
+--GDTX-NETWORK:
+MEGAWAN(Bk): route add -net 172.16.9.0 netmask 255.255.255.0 gw 172.17.27.129 eth1
+MPLS(Main) : route add -net 172.16.9.0 netmask 255.255.255.0 gw 172.17.27.130 eth1
+
+--Contact to: tinhcx@hbse.com.vn
+
+
+

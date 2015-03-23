@@ -1,0 +1,22 @@
+9:18 AM 08/12/2014
+##################
+Xem phan quyen cua user root:
+[root@srv148 ~]# cat /etc/passwd | grep root
+root:x:0:0:root:/root:/bin/bash
+operator:x:11:0:operator:/root:/sbin/nologin
+[root@srv148 ~]# 
+#
+Tao 1 user va chinh sua cac thong so nhu sau:
+qwerty:x:0:0::/home/qwerty:/bin/bash
+#
+Logout ra va login lai de thay ket qua:
+[root@srv148 ~]#
+#
+DONE!
+#
+#
+#
+So sanh:
+########
+root  :x:0:0:root:/root       :/bin/bash
+qwerty:x:0:0:    :/home/qwerty:/bin/bash

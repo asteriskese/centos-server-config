@@ -1,0 +1,35 @@
+12:34 PM Tue/09/02/2010
+
+#nano /etc/profile
+
+--adding new records ath the bottom of file:
+########################@@@tinhcx@igi.com.vn
+####################################
+export PS1="\u@\h \w# "
+####################################
+#Update PATH: source /etc/profile
+#
+PATH=/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/script
+export PATH 
+PATH=$PATH:/opt/jdk1.8.0_25/bin:/opt/script:/opt/lampp/bin
+export PATH
+
+#JAVA CLASSPATH:
+CLASSPATH=$CLASSPATH:/opt/jdk1.8.0_25/jre/lib:/opt/jdk1.8.0_25/jre/lib/ext:.
+export CLASSPATH
+
+#SOLR HOME:
+SOLR_HOME=/opt/solr-4.10.3
+export SOLR_HOME
+
+JAVA_HOME=/opt/jdk1.8.0_25
+export JAVA_HOME
+
+JRE_HOME=/opt/jdk1.8.0_25/jre
+export JRE_HOME
+####################################
+####################################
+
+
+--update cac bien moi truong
+#source /etc/profile

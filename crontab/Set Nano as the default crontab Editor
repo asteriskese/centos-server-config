@@ -1,0 +1,12 @@
+10:12 18/03/2015
+https://linuxmoz.com/how-to-change-crontab-editor/
+By default on Linux based systems Vi is used to edit the crontab, some of you might prefer Emacs (shame on you) and some others might even prefer to use Nano or Pico (no comment). Regardless of your reason not to use Vi for editing your crontab (I can’t think of any?), here are the instructions on how to change the crontab default editor in Linux (any version, Ubuntu, CentOS, Debian etc).
+
+Note, this will also change the default editor for a number of other commands.
+Set Nano as the default editor in Linux:
+
+#nano /etc/profile
+
+add to end of file: export EDITOR=nano
+
+#source /etc/profile

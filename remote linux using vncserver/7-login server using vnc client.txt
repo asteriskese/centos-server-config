@@ -1,0 +1,1 @@
+2:03 PM Wed/01/12/2010=====Su dung vnc client nhu:	1.vnc-4_1_3-x86_win32_viewer.exe	2.TightVNC		Server Address: 	ROOT user: IP:1/123456	ORACLE user: IP:2/123456

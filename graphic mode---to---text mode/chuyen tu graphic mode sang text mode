@@ -1,0 +1,19 @@
+﻿10:03 AM Wed/14/04/2010
+#######################
+cp /etc/inittab /etc/inittab.bk
+nano /etc/inittab
+#################
+# Default runlevel. The runlevels used by RHS are:
+#   0 - halt (Do NOT set initdefault to this)
+#   1 - Single user mode
+#   2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+#   3 - Full multiuser mode <--------TEXT MODE
+#   4 - unused
+#   5 - X11                 <--------GRAPHIC MODE
+#   6 - reboot (Do NOT set initdefault to this)
+#
+#id:5:initdefault:
+id:3:initdefault:
+/
+/
+Sau khi cài graphic xong bạn muốn cho nó khởi động thì chỉ vào text thi bạn edit lại /etc/inittab từ default 5 thành 3

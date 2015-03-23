@@ -1,0 +1,33 @@
+﻿14:04 18/03/2015
+################
+echo "$(date) : eth0up: starting..." >>/root/cron-schedule-log
+/sbin/ifconfig eth0 up > /dev/null
+/etc/init.d/network restart
+echo "$(date) : eth0up: done" >>/root/cron-schedule-log
+
+#################
+root@srv000 /opt/script# cat eth0up
+/sbin/ifconfig eth0 up > /dev/null
+echo "$(date) : eth0up" >>/root/cron-schedule-log
+
+#################
+#"crontab -e"
+	###########################################
+	#Sync Time Server, daily, at 0h01:
+	#01 0 * * * /opt/script/time-force-update
+	
+	#Thứ 4, tháng 3,ngày 18, 14h04:
+	04 14 18 3 2 /opt/script/eth0down	
+	##Thứ 4, tháng 3,ngày 18, 14h05:
+	05 14 18 3 2 /opt/script/eth0up
+
+	#Every 5 mins:
+	#*/5 * * * * /opt/script/eth0down
+
+	#Enable eth0 daily, 0h05->6h05:
+	#05 00-06 * * * /opt/script/eth0up
+
+	#Disable eth0 daily, 6h59:
+	#59 06    * * * /opt/script/eth0down
+	
+#

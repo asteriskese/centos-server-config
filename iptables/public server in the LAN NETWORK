@@ -1,0 +1,40 @@
+﻿18:01 16/02/2015
+################
+http://www.tomshardware.com/forum/12532-42-iptables-access-local-server-external
+root@srv:~# cat /etc/network/interfaces
+auto lo
+iface lo inet loopback
+#
+#LAN INTERFACE:
+auto em1
+iface em1 inet static
+        address 172.16.255.1
+        netmask 255.255.255.0
+        dns-nameservers 8.8.8.8 210.245.0.11
+        post-up iptables-restore < /etc/iptables.up.rules
+        #gateway 172.16.255.1
+        #network 172.16.255.0
+        #broadcast 172.16.255.255
+#
+#WAN INTERFACE: VNPT STATIC IP
+auto p1p1
+iface p1p1 inet static
+        address 14.160.5.174
+        netmask 255.255.255.252
+        gateway 14.160.5.173
+        dns-nameservers 8.8.8.8 210.245.0.11
+
+#WAN: p1p1 - 14.160.5.174
+#LAN: me1 - 172.16.255.1
+#LAN NETWORK: 172.16.255.0/24
+#####################
+TORRENT SERVER: 172.16.255.111, đang muốn public 1 số services: HTTP 9090, TORRENT 33015
+#the DNAT rule would be something like:
+iptables -t nat -A PREROUTING -d 14.160.5.174 -m tcp -p tcp --dport 9090 -j DNAT --to-destination 172.16.255.111
+iptables -t nat -A PREROUTING -d 14.160.5.174 -m tcp -p tcp --dport 33015 -j DNAT --to-destination 172.16.255.111
+<<Thực tế chỉ cần DNAT đã public được services ra internet rùi
+#Then the SNAT rule would be:
+iptables -t nat -A POSTROUTING -d 172.16.255.111 -s 172.16.255.0/24 -j SNAT --to-source 172.16.255.1
+iptables -t nat -A POSTROUTING -d 172.16.255.111 -s 172.16.255.0/24 -j SNAT --to-source 172.16.255.1
+
+Note that the destination in the SNAT rule is the internal ip address of the web server and not the external - this is because the destination of the packet had already been changed by the DNAT rule...

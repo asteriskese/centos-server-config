@@ -1,0 +1,12 @@
+This is the Linux scp command syntax to send file or directory to a remote computer:
+scp -r [/path/filename] [login name@ip address] : .
+
+This is the Linux scp command syntax to retrieve file or directory from a remote computer:
+scp -r [login name@ip address] : [/path/filename] .
+
+Here are the meaning of scp command options:
+    * -r = recursively copy entire directory
+    * . = current directory
+	
+	
+Source: http://www.basicconfig.com/linux/linux_scp_command_example

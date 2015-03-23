@@ -1,0 +1,2 @@
+Start the vncserver as root.
+# /sbin/service vncserver start

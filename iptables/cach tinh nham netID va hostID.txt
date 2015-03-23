@@ -1,0 +1,192 @@
+﻿14:54 PM Fri/03/06/2011
+=======================
+1. Chia IP ở lớp C :
+1A. Chia 192.168.10.0 / 24 thành 2 mạng con
+Bước 1 Xác định số bit cần lấy : 2^1 = 2 mạng
+- Ta lấy 1 bit từ HostID cho NetID :
+192.168.10.0 / 24
+255.255.255.0 ó 11111111.11111111.11111111 . 0 0 0 0 0 0 0 0
+
+
+Ta lấy bit ở vị trí thứ 7
+- Đối với lớp C : ta có 24 bit cho NetID và 8 bit cho HostID.
+- Ta đã lấy 1 bit ở HostID nên số bit còn lại ở HostID là 7 bit.
+- Ta có số bit ở NetID là 25 bit.
+Bước 2 Xác định số host mỗi mạng : Số host = 2^số bit còn lại của HostID
+- Số host mỗi mạng là : 2 ^ 7 = 128 host ( bao gồm địa chỉ mạng và broadcast )
+- Số host thực là : 128 – 2 ( trừ đi địa chỉ đầu là địa chỉ mạng
+và địa chỉ cuối là broadcast)
+Bước 3 Xác định dãy IP :
+- Vì lấy đi 1 bit nên số bit còn lại ở hostID là 7 : => 2^7 = 128. (mỗi lần cộng thêm 128)
+- Ta có dãy IP là : ( 25bit )
+Network Range Broadcast
+192.168.10.0 192.168.10.1 – 192.168.10.126 192.168.10.127
+192.168.10.128 192.168.10.129 – 192.168.10.254 192.168.10.255
+
+Bước 4 Xác đinh subnet masks
+- Subnet masks ban đầu có 24 bit :
+255.255.255.0 => 11111111.11111111.11111111. 0 0 0 0 0 0 0 0
+- Ta lấy đi 1 bit :
+11111111.11111111.11111111. 1 0 0 0 0 0 0 0
+- Ta có :
+1*2^7 + 0*2^6 + 0*2^5 + 0*2^4 + 0*2^3 + 0*2^2 + 0*2^1 + 0*2^5 = 128
+- Kết quả : 255.255.255.128 / 25
+
+1B. Chia 192.168.10.0 / 24 thành 4 mạng con
+Bước 1 Xác định số bit cần lấy : 2^2 = 4 mạng
+- Ta lấy 1 bit từ HostID cho NetID :
+192.168.10.0 / 24
+255.255.255.0 ó 11111111.11111111.11111111 . 0 0 0 0 0 0 0 0
+
+
+Ta lấy bit ở vị trí thứ 7,6
+- Đối với lớp C : ta có 24 bit cho NetID và 8 bit cho HostID.
+- Ta đã lấy 2 bit ở HostID nên số bit còn lại ở HostID là 6 bit.
+- Ta có số bit ở NetID là 26 bit.
+Bước 2 Xác định số host mỗi mạng : Số host = 2^số bit còn lại của HostID
+- Số host mỗi mạng là : 2 ^6 = 64 host ( bao gồm địa chỉ mạng và broadcast )
+- Số host thực là : 64 – 2 ( trừ đi địa chỉ đầu là địa chỉ mạng
+và địa chỉ cuối là broadcast)
+Bước 3 Xác định dãy IP :
+- Vì lấy đi 2 bit nên số bit còn lại ở hostID là 6 : => 2^6 = 64. (mỗi lần cộng thêm 64)
+- Ta có dãy IP là : ( 26bit )
+Network Range Broadcast
+192.168.10.0 192.168.10.1 – 192.168.10.62 192.168.10.63
+192.168.10.64 192.168.10.65 – 192.168.10.126 192.168.10.127
+192.168.10.128 192.168.10.129 – 192.168.10.190 192.168.10.191
+192.168.10.192 192.168.10.193 - 192.168.10.254 192.168.10.255
+
+Bước 4 Xác đinh subnet masks
+- Subnet masks ban đầu có 24 bit :
+255.255.255.0 => 11111111.11111111.11111111. 0 0 0 0 0 0 0 0
+- Ta lấy đi 1 bit :
+11111111.11111111.11111111. 1 1 0 0 0 0 0 0
+- Ta có :
+1*2^7 + 1*2^6 + 0*2^5 + 0*2^4 + 0*2^3 + 0*2^2 + 0*2^1 + 0*2^5 = 192
+- Kết quả : 255.255.255.192 / 26
+
+2. Chia IP ở lớp B :
+2A. Chia 172.16.0.0 / 16 thành 2 mạng con
+Bước 1 Xác định số bit cần lấy : 2^1 = 2 mạng
+- Ta lấy 1 bit từ HostID cho NetID :
+172.16.0.0 / 16
+255.255.0.0 ó 11111111.11111111. 0 0 0 0 0 0 0 0 . 0 0 0 0 0 0 0 0
+
+
+Ta lấy bit ở vị trí thứ 7
+- Đối với lớp B : ta có 16 bit cho NetID và 16 bit cho HostID.
+- Ta đã lấy 1 bit ở HostID nên số bit còn lại ở HostID là 15 bit.
+- Ta có số bit ở NetID là 17 bit.
+Bước 2 Xác định số host mỗi mạng : Số host = 2^số bit còn lại của HostID
+- Số host mỗi mạng là : 2^15 = 32768 ( bao gồm địa chỉ mạng và broadcast )
+- Số host thực là : 2^15 – 2 ( trừ đi địa chỉ đầu là địa chỉ mạng
+và địa chỉ cuối là broadcast)
+Bước 3 Xác định dãy IP :
+- Vì lấy đi 1 bit nên số bit còn lại ở hostID là 7 : => 2^7 = 128. (mỗi lần cộng thêm 128)
+(tính trong từng obtain)
+- Ta có dãy IP là : ( 25bit )
+Network Range Broadcast
+172.16.0.0 172.16.0.1 – 172.16.127.254 172.16.127.255
+172.16.128.0 172.16.128.1 – 172.16.255.254 172.16.255.255
+
+Bước 4 Xác đinh subnet masks
+- Subnet masks ban đầu có 16 bit :
+255.255.0.0 => 11111111.11111111. 0 0 0 0 0 0 0 0 . 0 0 0 0 0 0 0 0
+- Ta lấy đi 1 bit :
+11111111.11111111. 1 0 0 0 0 0 0 0 . 0 0 0 0 0 0 0 0
+- Ta có :
+1*2^7 + 0*2^6 + 0*2^5 + 0*2^4 + 0*2^3 + 0*2^2 + 0*2^1 + 0*2^5 = 128
+- Kết quả : 255.255.128.0 / 17
+
+2B. Chia 172.16.0.0 / 16 thành 8 mạng con
+Bước 1 Xác định số bit cần lấy : 2^3 = 8 mạng
+- Ta lấy 3 bit từ HostID cho NetID :
+172.16.0.0 / 16
+255.255.0.0 ó 11111111.11111111. 0 0 0 0 0 0 0 0 . 0 0 0 0 0 0 0 0
+
+Ta lấy bit ở vị trí thứ 7, 6, 5
+- Đối với lớp B : ta có 16 bit cho NetID và 16 bit cho HostID.
+- Ta đã lấy 3 bit ở HostID nên số bit còn lại ở HostID là 13 bit.
+- Ta có số bit ở NetID là 19 bit.
+Bước 2 Xác định số host mỗi mạng : Số host = 2^số bit còn lại của HostID
+- Số host mỗi mạng là : 2^ 13 = 8192 ( bao gồm địa chỉ mạng và broadcast )
+- Số host thực là : 2^13 – 2 ( trừ đi địa chỉ đầu là địa chỉ mạng
+và địa chỉ cuối là broadcast)
+Bước 3 Xác định dãy IP :
+- Vì lấy đi 3 bit nên số bit còn lại ở hostID là 5 : => 2^5 = 32. (mỗi lần cộng thêm 32)
+(tính trong từng obtain)
+- Ta có dãy IP là : ( 25bit )
+Network Range Broadcast
+172.16.0.0 172.16.0.1 – 172.16.31.254 172.16.31.255
+172.16.32.0 172.16.32.1 – 172.16.63.254 172.16.63.255
+172.16.64.0 172.16.64.1 – 172.16.127.254 172.16.127.255
+172.16.128.0 172.16.128.1 – 172.16.159.254 172.16.159.255
+172.16.160.0 172.16.160.1 – 172.16.191.254 172.16.191.255
+172.16.192.0 172.16.192.1 – 172.16.223.254 172.16.223.255
+172.16.224.0 172.16.224.1 – 172.16.255.254 172.16.255.255
+
+Bước 4 Xác đinh subnet masks
+- Subnet masks có 16 bit : 11111111.11111111. 0 0 0 0 0 0 0 0 . 0 0 0 0 0 0 0 0
+- Ta lấy đi 3 bit 11111111.11111111. 1 1 1 0 0 0 0 0 . 0 0 0 0 0 0 0 0
+- Nên 1*2^7 + 1*2^6 + 0*2^5 + 1*2^4 + 0*2^3 + 0*2^2 + 0*2^1 + 0*2^5 = 224
+- Kết quả : 255.255.224.0 / 17
+
+3. Chia IP ở lớp A :
+3A. Chia 10.0.0.0 / 16 thành 4 mạng con
+Bước 1 Xác định số bit cần lấy : 2^2 = 4 mạng
+- Ta lấy 2 bit từ HostID cho NetID :
+172.0.0.0 / 8
+255.0.0.0 ó 11111111. 0 0 0 0 0 0 0 0 . 0 0 0 0 0 0 0 0 . 0 0 0 0 0 0 0 0
+
+Ta lấy bit ở vị trí thứ 7, 6
+- Đối với lớp B : ta có 8 bit cho NetID và 24 bit cho HostID.
+- Ta đã lấy 2 bit ở HostID nên số bit còn lại ở HostID là 22 bit.
+- Ta có số bit ở NetID là 10 bit.
+Bước 2 Xác định số host mỗi mạng : Số host = 2^số bit còn lại của HostID
+- Số host mỗi mạng là : 2^ 22 = 4194304 ( bao gồm địa chỉ mạng và broadcast )
+- Số host thực là : 2^22 – 2 ( trừ đi địa chỉ đầu là địa chỉ mạng
+và địa chỉ cuối là broadcast)
+Bước 3 Xác định dãy IP :
+- Vì lấy đi 2 bit nên số bit còn lại ở hostID là 6 : => 2^6 = 64. (mỗi lần cộng thêm 64)
+(tính trong từng obtain)
+- Ta có dãy IP là : ( 10bit )
+Network Range Broadcast
+10.0.0.0 10.0.0.1 – 10.63.255.254 10.63.255.255
+172.64.0.0 10.64.0.1 – 10.127.255.254 10.127.255.255
+172.128.0.0 10.128.0.1 – 10.191.255.254 10.191.255.255
+172.192.0.0 10.192.0.1 – 10.255.255.254 10.255.255.255
+
+Bước 4 Xác đinh subnet masks
+- Subnet masks có 8 bit : 11111111.0 0 0 0 0 0 0 0. 0 0 0 0 0 0 0 0. 0 0 0 0 0 0 0 0
+- Ta lấy đi 11111111.1 1 0 0 0 0 0 0. 0 0 0 0 0 0 0 0 .0 0 0 0 0 0 0 0
+- Nên 1*2^7 + 1*2^6 + 0*2^5 + 0*2^4 + 0*2^3 + 0*2^2 + 0*2^1 + 0*2^5 = 192
+- Kết quả : 255.255.192.0 / 10
+
+4. Supper Subnet – CIDR :
+- Dùng để kết hợp nhiều subnet khác nhau thành 1 subnet chung, có thể truyền thông được với nhau.
+- Cách thực hiện : theo qui tắc 2^1, 2^2, 2^3, 2^4 ….. \
+- Nếu có 2 mạng -> qui tắc 2^1.
+- Nếu có 4 mạng -> qui tắc 2^2……
+4.A. Cách tính supper subnet :
+- Ví dụ : có 8 mạng sau đây
+194.10.1.0 / 24 (255.255.255.0)
+194.10.2.0 / 24
+194.10.3.0 / 24
+194.10.4.0 / 24
+194.10.5.0 / 24
+194.10.6.0 / 24
+194.10.7.0 / 24
+ 194.10.8.0 / 24
+- Ta áp dụng qui tắc 2^3. Vì 2^3 = 8 mạng è 24 bit – 3 = 21 bit
+- Như vậy, tất cả các mạng trên sẽ có subnet là 21 bit.
+24 bit có dạng : 255.255.255.0
+7 6 5 4 3 2 1 0
+ó 11111111.11111111.1 1 1 1 1 1 1 1.00000000
+Ta bỏ đi 3 bit : (tính từ 0 => ta bỏ bit : 0, 1, 2)
+Ta được :
+2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2^1 + 2^0 - 2^2 + 2^1 + 2^0 = 248
+- Kết quả cuối cùng : 255.255.248.0 / 21 bit 
+#
+#
+#
+Source: http://www.kmasecurity.net/xforce/giao-thuc-tcp-ip/6017-cach-tinh-nha-m-netid-va-broadcast-cuc-nhanh-2.html

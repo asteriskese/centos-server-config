@@ -1,0 +1,80 @@
+#11:03 AM Fri/25/02/2011
+############################
+RMAN for DUPLACATED DATABASE
+############################
+login as: root
+=======HBS NS1 SERVER==========
+LAN: 10.176.1.251
+WAN: 10.176.2.124->123.30.16.214
+Part 1: (18GB) : /
+Part 2: (47GB): /opt
+Project Location: /opt/workspace
+Oracle Datafile location: /opt/u01/app/oracle/oradata/study
+
+Contact to : tinhcx@hbse.com.vn
+===============================
+#
+ORACLE ACC: SYS/SYS@STUDY251; HR/HR@STUDY251
+#
+SQL> select name from v$datafile;
+
+NAME
+-------------------------------------------
+/u01/app/oracle/oradata/study/system01.dbf
+/u01/app/oracle/oradata/study/undotbs01.dbf
+/u01/app/oracle/oradata/study/sysaux01.dbf
+/u01/app/oracle/oradata/study/users01.dbf
+/u01/app/oracle/oradata/study/example01.dbf
+/opt/u01/app/oracle/oradata/study/study01.dbf
+
+6 rows selected.
+#
+create pfile='/opt/u01/oravn_backup/initoravn.ora' from spfile;
+#
+DB_FILE_NAME_CONVERT='/u01/app/oracle/oradata/study','/opt/u01/oravn_backup/oravn
+LOG_FILE_NAME_CONVERT='/u01/app/oracle/oradata/study','/opt/u01/oravn_backup/oravn
+#
+su - oracle
+mkdir -p /u01/app/oracle/admin/oravn/adump
+mkdir -p /u01/app/oracle/admin/oravn/bdump
+mkdir -p /u01/app/oracle/admin/oravn/cdump
+mkdir -p /u01/app/oracle/admin/oravn/ddump
+mkdir -p /opt/u01/oravn_backup/oravn
+#
+orapwd file='/u01/app/oracle/product/10.2.0/db_1/dbs/orapworavn' password=oracle entries=5
+#
+SQL>  startup nomount pfile='/opt/u01/oravn_backup/initoravn.ora';
+ORACLE instance started.
+
+Total System Global Area 1811939328 bytes
+Fixed Size                  1219952 bytes
+Variable Size             419431056 bytes
+Database Buffers         1375731712 bytes
+Redo Buffers               15556608 bytes
+SQL> 
+#
+create spfile from pfile='/opt/u01/oravn_backup/initoravn.ora';
+KQ: 
+File created.
+#
+#du - oracle 
+$rman
+RMAN> connect target sys/oracle@study251
+
+connected to target database: STUDY (DBID=2749474168)
+
+RMAN> 
+#
+ backup database format '/opt/u01/oravn_backup/db_%u' plus archivelog format
+'/opt/u01/oravn_backup/arc_%u';
+#
+connect target sys/sys@study251
+
+
+
+
+
+
+
+
+

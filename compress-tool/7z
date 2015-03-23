@@ -1,0 +1,15 @@
+8:33 03/03/2015
+Install 7zip on Centos 6.4 (i686) 
+
+### 1. Add rpmforge repository
+ wget http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.i686.rpm
+ rpm -ivh rpmforge-release-0.5.2-2.el6.rf.i686.rpm
+ 
+###2. Install 7z
+ yum install p7zip
+ 
+###3. Extract file 
+ 7za x [7zfilename]
+ 
+###4. Compress 
+ 7za a -mx=9 7zfilename.7z [filename/directory]

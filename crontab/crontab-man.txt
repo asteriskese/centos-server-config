@@ -1,0 +1,79 @@
+14:02 PM 22/10/2014
+######How Do I install or create or edit my own cron jobs?
+To edit your crontab file, type the following command at the UNIX / Linux shell prompt:
+$ crontab -e
+
+
+
+######
+[root@centos iadmin]# cat crontab-man.txt | more
+CRONTAB(1)                                                          CRONTAB(1)
+
+
+
+NAME
+       crontab - maintain crontab files for individual users (ISC Cron V4.1)
+
+SYNOPSIS
+       crontab [-u user] file
+       crontab [-u user] [-l | -r | -e] [-i] [-s]
+
+DESCRIPTION
+       Crontab  is  the  program used to install, deinstall or list the tables
+       used to drive the cron(8) daemon in ISC Cron.  Each user can have their
+       own  crontab,  and though these are files in /var/spool/ , they are not
+       intended to be edited directly. For SELinux in mls  mode  can  be  even
+       more crontabs - for each range. For more see selinux(8).
+
+       If the cron.allow file exists, then you must be listed therein in order
+       to be allowed to use this command.  If the  cron.allow  file  does  not
+       exist but the cron.deny file does exist, then you must not be listed in
+       the cron.deny file in order to use this command.  If neither  of  these
+       files  exists, only the super user will be allowed to use this command.
+
+
+OPTIONS
+       -u     It specifies the name  of  the  user  whose  crontab  is  to  be
+              tweaked.   If  this option is not given, crontab examines "your"
+              crontab, i.e., the crontab of the person executing the  command.
+              Note  that su(8) can confuse crontab and that if you are running
+              inside of su(8) you should always use the -u option for safety’s
+              sake.   The  first form of this command is used to install a new
+              crontab from some named file or standard input  if  the  pseudo-
+              filename "-" is given.
+
+       -l     The current crontab will be displayed on standard output.
+
+       -r     The current crontab will be be removed.
+
+       -e     This option is used to edit the current crontab using the editor
+              specified by the VISUAL or EDITOR environment variables.   After
+              you exit from the editor, the modified crontab will be installed
+              automatically.
+
+       -i     This option modifies the -r option to  prompt  the  user  for  a
+              ’y/Y’ response before actually removing the crontab.
+
+       -s     It will append the current SELinux security context string as an
+              MLS_LEVEL setting to the crontab file before editing /  replace-
+              ment  occurs - see the documentation of MLS_LEVEL in crontab(5).
+
+SEE ALSO
+       crontab(5), cron(8)
+
+FILES
+       /etc/cron.allow
+       /etc/cron.deny
+
+STANDARDS
+       The crontab command conforms to IEEE Std1003.2-1992 (‘‘POSIX’’).   This
+       new  command  syntax  differs  from previous versions of Vixie Cron, as
+       well as from the classic SVR3 syntax.
+
+DIAGNOSTICS
+       A fairly informative usage message appears if you run  it  with  a  bad
+       command line.
+
+AUTHOR
+       Paul Vixie <vixie@isc.org>
+[root@centos iadmin]#

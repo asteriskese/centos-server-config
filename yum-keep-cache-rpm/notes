@@ -1,0 +1,13 @@
+11:50 27/02/2015
+http://www.linuxquestions.org/questions/red-hat-31/how-to-save-rpm-file-while-installing-through-yum-in-centos-943831/
+save rpm file while installing through yum in centos
+#############
+vi /etc/yum.conf
+	[main]
+	cachedir=/var/cache/yum
+	keepcache=1
+#
+#
+#
+       /var/cache/yum/$Repo/packages
+ls -lh /var/cache/yum/x86_64/6/base/packages

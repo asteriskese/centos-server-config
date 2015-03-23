@@ -1,0 +1,3 @@
+find /usr/src -name '*.c' -size +500k -print 
+
+Here is a typical use of `find'. This example prints the names of all files in the directory tree rooted in /usr/src' whose name ends with `.c' and that are larger than 100 Kilobytes.

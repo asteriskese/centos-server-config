@@ -1,0 +1,19 @@
+9:02 29/01/2015
+http://www.thegeekstuff.com/2008/09/bash-shell-ps1-10-examples-to-make-your-linux-prompt-like-angelina-jolie/
+#
+Bash Shell PS1
+##############
+1. Display username, hostname and current working directory in the prompt
+The PS1 in this example displays the following three information in the prompt:
+    \u – Username
+    \h – Hostname
+    \w – Full path of the current working directory
+
+-bash-3.2$ export PS1="\u@\h \w# "
+root@srv148 /# cd /opt/gluster-storage/www/upload-daivietgroup
+root@srv148 /opt/gluster-storage/www/upload-daivietgroup#
+#
+Ap dung cho toan server khi reboot:
+#nano /etc/profile
+	add [export PS1="\u@\h \w# "] to end of file
+#source /etc/profile

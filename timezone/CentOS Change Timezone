@@ -1,0 +1,13 @@
+2:36 PM 20/11/2014
+http://www.how2centos.com/centos-change-timezone/
+Firstly you’ll need to know your timezone and/or country, a list can be found in /usr/share/zoneinfo/
+
+The more generic procedure to change the timezone is to create a symlink to file /etc/localtime
+
+#ln -sf /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+or
+#cp /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+
+To verify that your timezone is changed use the date command:
+
+# date

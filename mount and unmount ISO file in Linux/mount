@@ -1,0 +1,20 @@
+10:58 AM 29/10/2014
+=========
+Xem server có những thiết bị ngoại vi nào cắm vào: CD, DVD, USB,..
+#cd /dev/
+#ll /dev | grep sr0
+
+1. Creating new folder:
+ #mkdir /mnt/iso
+
+2. Mounting ISO file:
+ #mount -o loop -t iso9660 <oracledb-10.2.0.1-linux32-RAC-SUPPORT.iso> /mnt/iso
+
+#####MOUNT
+mkdir /mnt/iso
+mount -o loop -t iso9660 oracledb-10.2.0.5.0-p8202632_2010.07.28.iso /mnt/iso
+cd /mnt/iso
+
+#####UNMOUNT
+cd /
+umount /mnt/iso

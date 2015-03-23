@@ -1,0 +1,5 @@
+root@srv030:/opt# md5sum mailserver
+64bea36753fd33ad820b5c1717358c5c  mailserver
+root@srv030:/opt# cat mailserver.md5
+64bea36753fd33ad820b5c1717358c5c *mailserver
+root@srv030:/opt# 

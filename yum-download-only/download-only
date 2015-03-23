@@ -1,0 +1,29 @@
+15:19 04/02/2015
+https://access.redhat.com/solutions/10154
+
+(RHEL5)
+# yum install yum-downloadonly
+
+(RHEL6)
+# yum install yum-plugin-downloadonly
+
+
+Run yum command with "--downloadonly" option as follows:
+# yum install --downloadonly --downloaddir=<directory> <package>
+
+
+#ex:
+yum install --downloadonly --downloaddir=/opt/setup/ openvpn
+yum install --downloadonly --downloaddir=/opt/setup/ mc
+
+#result:
+-rw-r--r--. 1 root root    14540 Nov  5  2012 epel-release-6-8.noarch.rpm
+-rw-r--r--. 1 root root    29144 Sep 26  2011 gpm-libs-1.20.6-12.el6.x86_64.rpm
+-rw-r--r--. 1 root root  1714124 Jul  3  2011 mc-4.7.0.2-3.el6.x86_64.rpm
+-rw-r--r--. 1 root root   424580 Dec  3 11:39 openvpn-2.3.6-1.el6.x86_64.rpm
+-rw-r--r--. 1 root root 10688736 Nov 12 17:32 perl-5.10.1-136.el6_6.1.x86_64.rpm
+-rw-r--r--. 1 root root   591652 Nov 12 17:32 perl-libs-5.10.1-136.el6_6.1.x86_64.rpm
+-rw-r--r--. 1 root root    40656 Nov 12 17:32 perl-Module-Pluggable-3.90-136.el6_6.1.x86_64.rpm
+-rw-r--r--. 1 root root    33000 Nov 12 17:32 perl-Pod-Escapes-1.04-136.el6_6.1.x86_64.rpm
+-rw-r--r--. 1 root root   217068 Nov 12 17:32 perl-Pod-Simple-3.13-136.el6_6.1.x86_64.rpm
+-rw-r--r--. 1 root root    52364 Nov 12 17:32 perl-version-0.77-136.el6_6.1.x86_64.rpm

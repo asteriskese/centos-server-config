@@ -1,0 +1,2 @@
+8:15 AM Thu/17/06/2010
+route add default gw [IP]

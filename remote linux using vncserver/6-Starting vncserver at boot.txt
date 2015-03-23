@@ -1,0 +1,1 @@
+To start vncserver at boot, enter the command #/sbin/chkconfig vncserver onFor basic VNC configuration the procedure is now complete. The following sections are optional refinements to enhance security and functionality.

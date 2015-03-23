@@ -1,0 +1,144 @@
+Linux netstat command is another useful network utility in Linux. We can use netstat to list network connections, view routing table and information about network interface. The netstat command has been one of useful tools for network troubleshooting. This tutorial is a basic guide to the netstat command with usage examples to help the new Linux beginner.
+Linux netstat command examples
+
+The syntax for netstat command is:
+
+netstat <option>
+
+Below are the common options used with netstat command:
+
+       –a            Lists all listening and non-listening sockets.
+       –i            Displays statistics for your network interfaces.
+       –l            Lists listening sockets.
+       –s            Displays summary information for each protocol.
+       –r            Displays your routing table.
+
+Lists all listening and non-listening sockets using netstat command with -a option:
+
+root@slackware:~# netstat -a
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 *:time                  *:*                     LISTEN
+tcp        0      0 *:netbios-ssn           *:*                     LISTEN
+tcp        0      0 *:auth                  *:*                     LISTEN
+tcp        0      0 slackware.example.c:domain *:*                     LISTEN
+tcp        0      0 localhost:domain        *:*                     LISTEN
+tcp        0      0 *:ssh                   *:*                     LISTEN
+tcp        0      0 localhost:rndc          *:*                     LISTEN
+tcp        0      0 *:microsoft-ds          *:*                     LISTEN
+tcp        0     52 slackware.example.com:ssh  192.168.1.6:1320        ESTABLISHED
+tcp6       0      0 [::]:ssh                [::]:*                  LISTEN
+tcp6       0      0 ::1%8191:rndc           [::]:*                  LISTEN
+...
+...
+...
+
+Displays statistics for Linux network interfaces using netstat command with -i option:
+
+root@slackware:~# netstat -i
+Kernel Interface table
+Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+eth0       1500 0       156      0      0 0           128      0      0      0 BMRU
+lo        16436 0        17      0      0 0            17      0      0      0 LRU
+root@slackware:~#
+
+Lists listening sockets using netstat command with -l option:
+
+root@slackware:~# netstat -l
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State
+tcp        0      0 *:time                  *:*                     LISTEN
+tcp        0      0 *:netbios-ssn           *:*                     LISTEN
+tcp        0      0 *:auth                  *:*                     LISTEN
+tcp        0      0 slackware.example.c:domain *:*                     LISTEN
+tcp        0      0 localhost:domain        *:*                     LISTEN
+tcp        0      0 *:ssh                   *:*                     LISTEN
+tcp        0      0 localhost:rndc          *:*                     LISTEN
+tcp        0      0 *:microsoft-ds          *:*                     LISTEN
+tcp6       0      0 [::]:ssh                [::]:*                  LISTEN
+tcp6       0      0 ::1%8191:rndc           [::]:*                  LISTEN
+udp        0      0 *:biff                  *:*
+udp        0      0 slackware.examp:netbios-ns *:*
+udp        0      0 *:netbios-ns            *:*
+udp        0      0 slackware.exam:netbios-dgm *:*
+udp        0      0 *:netbios-dgm           *:*
+udp        0      0 *:time                  *:*
+udp        0      0 *:48176                 *:*
+udp        0      0 slackware.example.c:domain *:*
+udp        0      0 localhost:domain        *:*
+udp6       0      0 [::]:50273              [::]:*
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ACC ]     STREAM     LISTENING     7941     /dev/gpmctl
+unix  2      [ ACC ]     STREAM     LISTENING     7064     @/var/run/hald/dbus-hPhDf9IKkl
+unix  2      [ ACC ]     STREAM     LISTENING     7067     @/var/run/hald/dbus-QrEWsdl4tf
+unix  2      [ ACC ]     STREAM     LISTENING     7037     /var/run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     7003     /var/run/acpid.socket
+root@slackware:~#
+
+Displays summary information for each protocol using netstat command with -s option:
+
+root@slackware:~# netstat -s
+Ip:
+    263 total packets received
+    0 forwarded
+    0 incoming packets discarded
+    243 incoming packets delivered
+    210 requests sent out
+Icmp:
+    5 ICMP messages received
+    0 input ICMP message failed.
+    ICMP input histogram:
+        destination unreachable: 3
+        echo replies: 2
+    2 ICMP messages sent
+    0 ICMP messages failed
+    ICMP output histogram:
+        echo request: 2
+IcmpMsg:
+        InType0: 2
+        InType3: 3
+        OutType8: 2
+Tcp:
+    2 active connections openings
+    1 passive connection openings
+    2 failed connection attempts
+    0 connection resets received
+    1 connections established
+    175 segments received
+    152 segments send out
+    0 segments retransmited
+    0 bad segments received.
+    2 resets sent
+Udp:
+    63 packets received
+    0 packets to unknown port received.
+    0 packet receive errors
+    56 packets sent
+UdpLite:
+TcpExt:
+    1 delayed acks further delayed because of locked socket
+    1 packets directly queued to recvmsg prequeue.
+    1 bytes directly received in process context from prequeue
+    24 packet headers predicted
+    95 acknowledgments not containing data payload received
+    2 predicted acknowledgments
+IpExt:
+    InBcastPkts: 37
+    OutBcastPkts: 25
+root@slackware:~#
+
+Displays Linux routing table using netstat command with -r option:
+
+root@slackware:~# netstat -r
+Kernel IP routing table
+Destination Gateway Genmask Flags MSS Window irtt Iface
+localnet * 255.255.255.0 U 0 0 0 eth0
+loopback * 255.0.0.0 U 0 0 0 lo
+default 192.168.1.1 0.0.0.0 UG 0 0 0 eth0
+root@slackware:~#
+
+
+Source: http://www.basicconfig.com/linuxnetwork/netstat
+
+netstat -ntlup

@@ -1,0 +1,10 @@
+user da tao ra co home: [/home/<username>]
+Chuyen thu muc HOME sang duong dan khac:
+	#usermod -d /path/to/new/homedir/ username
+	
+	or:
+	nano /etc/password
+	Sua noi dung HOME cua user;
+		vboxuser:x:501:501::/home/vboxuser:/bin/bash
+		thanh:
+		vboxuser:x:501:501::/opt/vboxuser:/bin/bash

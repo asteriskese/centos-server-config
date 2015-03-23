@@ -1,0 +1,9 @@
+7:52 AM Thu/17/06/2010
+--Gan dia chi IP, Netmask cho etho, chua co gateway
+ifconfig eth0 10.0.0.1 netmask 255.255.255.0 up
+
+--Gan dia chi gateway hoac thay doi dia chi gateway
+route add default gw 192.168.1.1 eth0
+
+--Delete route
+route del -net 10.0.0.0 netmask 255.0.0.0 gw 192.168.1.254 wlan0

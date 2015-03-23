@@ -1,0 +1,8 @@
+11:11 18/03/2015
+
+ip addr del 1.2.3.4/32 dev eth0
+
+ip addr flush dev eth0
+
+
+As simple as ifconfig eth0 0.0.0.0. They should have put it in the man

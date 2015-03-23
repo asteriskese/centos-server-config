@@ -1,0 +1,25 @@
+5:05 PM 12/12/2014
+#How-To disable IPv6 on RHEL6 / CentOS 6 / etc
+#http://blog.acsystem.sk/linux/rhel-6-centos-6-disabling-ipv6-in-system
+###########################################
+#####nano /etc/sysctl.conf
+Add to end of file:
+	net.ipv6.conf.lo.disable_ipv6 = 1
+	net.ipv6.conf.default.disable_ipv6=1
+	net.ipv6.conf.all.disable_ipv6 = 1
+
+#####nano /etc/sysconfig/network
+	NETWORKING_IPV6=no
+	
+#####nano /etc/sysconfig/network-scripts/ifcfg-eth0
+	IPV6INIT=no
+	
+#####disable iptables6
+	chkconfig –level 345 ip6tables off
+
+#####sysctl -p
+
+#####After that if you check,
+	cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+
+#####reboot

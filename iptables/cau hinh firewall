@@ -1,0 +1,6 @@
+16:31 PM Tue/26/01/2010
+
+#system-config-securitylevel
+
+disable SE LINUX:
+#nano /etc/selinux/config

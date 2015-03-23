@@ -1,0 +1,6 @@
+7:43 AM Thu/17/06/2010
+
+route del -net 172.16.8.0 netmask 255.255.255.0 gw 172.17.27.129 eth1
+
+
+Source: http://www.linuxhomenetworking.com/wiki/index.php/Quick_HOWTO_:_Ch03_:_Linux_Networking

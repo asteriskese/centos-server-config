@@ -1,0 +1,45 @@
+Linux uname examples
+
+Example 1 - Use Linux uname command with no option:
+
+luzar@musang:~$ uname
+Linux
+luzar@musang:~$
+
+The uname command with no option prints operating system name.
+
+Example 2 - Linux uname command with -r option:
+
+luzar@musang:~$ uname -r
+2.6.24.5-smp
+luzar@musang:~$
+
+The uname command with -r option prints the kernel release.
+
+Example 3 - Linux uname command with -v option:
+
+luzar@musang:~$ uname -v
+#2 SMP Wed Apr 30 13:41:38 CDT 2008
+luzar@musang:~$
+
+The uname command with -v option prints the kernel version.
+
+Example 4 - Linux uname command with -p option:
+
+luzar@musang:~$ uname -p
+Intel(R) Core(TM)2 Duo CPU     E6750  @ 2.66GHz
+luzar@musang:~$
+
+The uname command with -p option prints the processor type.
+
+Example 5 - Linux uname command with -a option:
+
+luzar@musang:~$ uname -a
+Linux musang 2.6.24.5-smp #2 SMP Wed Apr 30 13:41:38 CDT 2008 i686 Intel(R) Core(TM)2 Duo CPU     E6750  @ 2.66GHz GenuineIntel GNU/Linux
+luzar@musang:~$
+
+The uname command with -a option prints the kernel name, network node, kernel release, kernel version, machine hardware name, processor type, hardware platform and operating system.
+
+
+
+Source: http://www.basicconfig.com/linux/uname_command

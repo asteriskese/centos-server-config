@@ -1,0 +1,13 @@
+[root@hnx01 network-scripts]# cat ifcfg-eth0
+# Broadcom Corporation NetXtreme II BCM5709 Gigabit Ethernet
+DEVICE=eth0
+BOOTPROTO=none
+BROADCAST=10.176.11.255
+HWADDR=e4:1f:13:60:05:c8
+IPADDR=10.176.11.127
+NETMASK=255.255.255.0
+NETWORK=10.176.11.0
+ONBOOT=yes
+TYPE=Ethernet
+GATEWAY=10.176.11.247
+[root@hnx01 network-scripts]# 

@@ -1,0 +1,67 @@
+﻿10:07 02/03/2015
+http://www.thegeekstuff.com/2010/07/screen-command-examples/
+UBUNTU: apt-get install screen
+CENTOS: yum install screen
+
+GNU SCREEN được sử dụng trong trường hợp muốn chạy câu lệnh trên terminal và ngắt kết nối SSH. Về bản chất giống như muốn chạy lệnh trên server windows khi ta remote desktop và thoát ra ngoài đơn giản là Disconnect chứ ko phải logoff. Như vậy các ứng dụng/các lệnh đang chạy vẫn tiếp tục thực hiện mà không bị ngắt đi.
+
+Trên linux không có ứng dụng tương tự như vậy như windows remote desktop. Do vậy ta phải cài thêm ứng dụng có tên GNU SCREEN
+########
++Screen command offers the ability to detach a long running process (or program, or shell-script) from a session and then attach it back at a later time.
++When the session is detached, the process that was originally started from the screen is still running and managed by the screen. You can then re-attach the session at a later time, and your terminals are still there, the way you left them.
+
+Thực hiện câu lệnh trong ứng dụng GNU SCREEN:
+root@srv:~# screen
+	#----------------------
+	Screen version 4.01.00devel (GNU) 2-May-06
+	.............
+	Capabilities:
+	+copy +remote-detach +power-detach +multi-attach +multi-user +font +color-256 +utf8 +rxvt +builtin-telnet
+
+																		[Press Space or Return to end.]
+	#----------------------
+<ENTER>
+root@srv:~# <<Màn hình này thực chất là màn hình của screen
+            <<Bất kỳ ứng dụng nào đang chạy ở session của màn hình screen sẽ được giữ mãi, cho dù ta có chủ động ngắt kết nối SSH
+#
+root@srv:~#solr-8989-auto-start-on-boot
+			<<Ứng dụng sẽ chạy ở màn hình screen mãi, giờ ta muốn thoát ra mà muốn ứng dụng vẫn chạy, đơn giản là đóng cửa sổ terminal lại
+			<<Mở 1 cửa sổ terminal khác và kiểm tra: 
+#
+root@srv:~# screen -ls
+There are screens on:
+        28326.pts-4.srv (03/02/2015 10:11:39 AM)        (Detached)
+        7205.pts-4.srv  (02/28/2015 11:22:26 PM)        (Detached)
+2 Sockets in /var/run/screen/S-root.
+			<<2 cửa sổ với thời gian tạo lần đầu tiên là khác nhau vẫn đang tồn tại và bị Detached
+#
+root@srv:~# screen -r 7205.pts-4.srv
+			<<Lệnh này sẽ lấy lại màn hình 
+				root@srv:/opt/www/1.nguoichungcu.com# screen -r 7205.pts-4.srv
+				There is a screen on:
+						7205.pts-4.srv  (02/28/2015 11:22:26 PM)        (Attached)
+				There is no screen to be resumed matching 7205.pts-4.srv.
+				root@srv:/opt/www/1.nguoichungcu.com# screen -d 7205.pts-4.srv
+				[7205.pts-4.srv detached.]
+
+				root@srv:/opt/www/1.nguoichungcu.com# 
+				<<Là công việc đã làm trước đây.				
+#
+Nếu ấn Ctrl + D: nghĩa là ta ngắt phiên kết nối screen: [screen is terminating]
+#
+root@srv:~# screen -d  28326.pts-4.srv
+[28326.pts-4.srv detached.]
+				<<Hành động này sẽ detached screen đang sử dụng với ID là [28326.pts-4.srv]. Sau khi thực hiện lệnh này xong, ta có thể đóng cửa sổ SSH lại và đi về :). Khi nào cần login lại màn hình cũ, ta mở lại screen -r 28326.pts-4.srv
+				
++Screen Command Example 1: Execute a command (or shell-script), and detach the screen: 
+###Typically you’ll execute a command or shell-script as shown below from the command.
+	$ unix-command-to-be-executed
+	$ ./unix-shell-script-to-be-executed
+
+###Instead, use the screen command as shown below.
+	$ screen unix-command-to-be-executed
+	$ screen ./unix-shell-script-to-be-executed
++Screen Detach Method 1: Detach the screen using CTRL+A D
++Screen Detach Method 2: Detach the screen using -d option
++Screen Command Example 2: List all the running screen processes: screen -ls
++Screen Command Example 3: Attach the Screen when required: screen -r 28326.pts-4.srv

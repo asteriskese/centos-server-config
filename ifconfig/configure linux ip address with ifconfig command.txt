@@ -1,0 +1,42 @@
+Linux ifconfig command is used to setup a network interface card (NIC). It means we can use ifconfig command to configure ip address, netmask and gateway for the card. The ifconfig command is also used to configure or tuning the network interface card such as changing the ip address or assigning ip alias, protocol, parameter and other options. We can also use ifconfig command to view network interface card's status and to activate or deactivate the interface driver.
+
+User need to have root privileged in order to use the ifconfig command. So, switch to root by issuing su command. For a Ubuntu Linux add a sudo before the ifconfig command.
+
+ifconfig's syntax to configure ip address, netmask and to activate or deactivate network interface card:
+=====================
+ifconfig <interface> <ip address> netmask <netmask ip> up/down
+=====================
+Where:
+<interface> = Network interface card (eth0, eth1, etc)
+<ip address> = NIC ip address (i.e. 192.168.1.5)
+<netmask ip> = netmask ip (i.e. 255.255.255.0)
+up/down = Choose up to activate and down to deactivate.
+
+
+
+Example:
+ifconfig eth0 192.168.1.5 netmask 255.255.255.0 up
+Simple way to configure Linux ip address
+
+ifconfig's syntax:
+ifconfig [interface] [ip address] [option]
+
+Use ifconfig command to change ip address of the first network interface card example:
+ifconfig eth0 192.168.1.5
+
+Use ifconfig command to change ip address of the second network interface card example:
+ifconfig eth1 10.21.35.5
+
+Use ifconfig command to change netmask of the first network interface card example:
+ifconfig eth0 netmask 255.255.255.0
+
+Use ifconfig command to change netmask of the second network interface card example:
+ifconfig eth0 netmask 255.255.255.0
+
+Example on how to bring up the first network interface card using Linux ifconfig command:
+ifconfig eth0 192.168.1.5 up
+
+Example on how to bring down the first network interface card using Linux ifconfig command:
+ifconfig eth0 down
+
+Source: http://www.basicconfig.com/linuxnetwork/ifconfig

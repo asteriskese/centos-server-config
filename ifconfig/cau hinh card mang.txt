@@ -1,0 +1,40 @@
+17:09 PM Sat/19/12/2009
+Cai dat card mang;
+=================
+C1: #system-config-network (cho phep cau hinh ca DNS client)
+
+C2: #cd /etc/sysconfig/networking/devices
+trong thu muc [devices] co cac file tuong ung voi cac card mang;
+ex: ifcfg-eth0, ifcfg-eth2, ...
+AUTO:
+	DEVICE=eth0
+	BOOTPROTO=dhcp
+	HWADDR=
+	ONBOT=yes
+
+MANUAL:
+	DEVICE=eth0
+	BOOTPROTO=none
+	HWADDR=00:0C:29:DE:94:8B
+	ONBOOT=yes
+	TYPE=Ethernet
+	USERCTL=no
+	IPV6INIT=no
+	PEERDNS=yes
+	IPADDR=192.168.0.100
+	NETMASK=255.255.255.0	
+	GATEWAY=192.168.0.1
+	
+	
+Now save the configuration file and exit the text editor. To apply changes, we need to bring the network interface down and back up.
+
+# ifdown eth0
+# ifup eth0
+
+cau hinh xong phai restart service [network]
+#/etc/init.d/network restart
+(ubuntu: #/etc/init.d/networking restart)
+===================================================
+10:33 AM Thu/10/06/2010
+ifconfig eth0 <IP Address> network <network> up
+route add default gw <gw>

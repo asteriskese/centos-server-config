@@ -1,0 +1,33 @@
+history
+
+-- Dinh dang cac lenh da go theo thoi gian:
+export HISTTIMEFORMAT='%F %T  '
+history
+
+KQ:
+   63  2014-10-20 23:39:10  ping 8.8.8.8
+   64  2014-10-20 23:39:10  top
+   65  2014-10-20 23:39:10  cd /var/log/squid
+   66  2014-10-20 23:39:10  cd /var/log/
+   67  2014-10-20 23:39:10  ls -lh
+   68  2014-10-20 23:39:10  htop
+   69  2014-10-20 23:39:10  yum install htop
+   70  2014-10-20 23:39:10  wget http://pkgs.repoforge.org/htop/htop-1.0.3-1.el7.rf.x86_64.rpm
+   71  2014-10-20 23:39:10  ls -lh
+   72  2014-10-20 23:39:10  rpm -i htop-1.0.3-1.el7.rf.x86_64.rpm 
+   73  2014-10-20 23:39:10  cd /
+   74  2014-10-20 23:39:10  pwd
+   75  2014-10-20 23:39:10  ls -lh
+   76  2014-10-20 23:39:10  history
+   77  2014-10-20 23:39:10  cd /etc/squid
+   78  2014-10-20 23:39:10  find / -name squid
+   79  2014-10-20 23:40:09  dmidecode 2.9
+   80  2014-10-20 23:40:54  dmidecode -t 1
+   81  2014-10-20 23:41:12  dmidecode 2.9
+   82  2014-10-20 23:41:30  dmidecode -t Processor
+   83  2014-10-20 23:44:53  history
+   84  2014-10-20 23:48:33  export HISTTIMEFORMAT='%F %T  '
+   85  2014-10-20 23:48:38  export HISTTIMEFORMAT='%F %T'
+   86  2014-10-20 23:48:53  history
+   87  2014-10-20 23:48:59  export HISTTIMEFORMAT='%F %T  '
+   88  2014-10-20 23:49:00  history

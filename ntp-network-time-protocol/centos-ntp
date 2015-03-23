@@ -1,0 +1,36 @@
+9:00 03/02/2015
+################
+CentOS Linux Install and Configure NTP to Synchronize The System Clock
+
+    ntp : ntpd server which continuously adjusts system time and utilities used to query and configure the ntpd daemon.
+    ntpdate : Utility to set the date and time via NTP.
+    ntp-doc : NTP documentation
+#install ntp
+yum install ntp ntpdate ntp-doc
+
+#Turn on service, enter:
+chkconfig ntpd on
+
+#Synchronize the system clock with 0.pool.ntp.org server (use this command only once or as required):
+ntpdate -s time.nist.gov
+
+#Start the NTP server. The following will continuously adjusts system time from upstream NTP server. No need to run ntpdate
+/etc/init.d/ntpd start
+
+
+######Configure ntpd (optional)
+nano /etc/ntp.conf
+
+#Set public servers from the pool.ntp.org project:
+	server 0.rhel.pool.ntp.org
+	server 1.rhel.pool.ntp.org
+	server 2.rhel.pool.ntp.org
+
+############
+crontab -e
+#Sync Time Server, daily, at 0h01:
+01 0 * * * /opt/script/time-force-update
+
+/opt/script/time-force-update:
+	ntpdate -s time.nist.gov
+

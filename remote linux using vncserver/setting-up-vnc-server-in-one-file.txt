@@ -1,0 +1,17 @@
+#ROOT MODE
+cd /
+vncpasswd
+ /etc/sysconfig/vncservers
+
+ .
+ .
+ .
+ .
+ 
+1-creating vnc password for user
+2-Edit the server configuration
+3-Create xstartup script
+4-Start the VNC server
+5-Testing with a vnc client
+6-Starting vncserver at boot
+7-login server using vnc client

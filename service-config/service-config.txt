@@ -1,0 +1,41 @@
+13:47 PM Mon/17/05/2010
+#ntsysv
+
+You need to have root level access to use the commands below.
+* /sbin/service [name] start
+  starts the background service
+  
+* /sbin/service [name] stop
+  stops the background service
+  
+* /sbin/service [name] restart
+  restarts the background service
+  
+* /sbin/service [name] status
+  displays the background service status
+  
+* /sbin/chkconfig ––list
+  displays all the available services
+  
+* /sbin/chkconfig ––level 345 [name] on
+  automatically runs the background service on the next startup
+  
+* /sbin/chkconfig ––level 345 [name] off
+  removes the background service from the startup list
+  
+* /sbin/chkconfig [name] on
+  enables the on-demand service
+  
+* /sbin/chkconfig [name] off
+  disables the on-demand service
+  
+Source:
+	http://www.linuxmail.info/how-to-start-stop-services-centos-5/
+#OR
+#
+Starting services on boot in a Centos VPS is accomplished via the chkconfig command:
+   1. To make the httpd start on boot in runlevel 3, the default runlevel for Centos.
+      chkconfig --levels 3 httpd on
+   2. To disable any service you do not want to start on boot:
+    chkconfig --levels 3 httpd off
+These commands add or remove symlinks from the /etc/rc.d/rc3.d directory to the script in /etc/init.d for that service.

@@ -1,0 +1,81 @@
+########################
+###12:08 PM 15/12/2014##
+########################
+#Linux Crontab Format: MIN HOUR DOM MON DOW CMD
+#Field		Description		Allowed Value
+#MIN		Minute field	0 to 59
+#HOUR		Hour field		0 to 23
+#DOM		Day of Month	1-31
+#MON		Month field		1-12
+#DOW		Day Of Week		0-6
+#CMD		Command			Any command to be executed.
+########################
+#Starting backup daily, at 2h15
+15 2 * * * /opt/script/bk-script-gluster-storage
+
+#Every 1 mins:
+* * * * * CMD
+
+#Every 5 mins:
+*/5 * * * * /home/ramesh/backup.sh
+
+#Every 5 hours:
+0 */5 * * * /home/ramesh/backup.sh
+
+#Every 5 secs:
+Create a shell script every-5-seconds.sh using bash while loop as shown below.$ cat every-5-seconds.sh
+	#!/bin/bash
+	while true
+	do
+	 /home/ramesh/backup.sh
+	 sleep 5
+	done
+	
+#####Scheduling a job for a specific time:
+30 08 10 06 * /home/ramesh/full-backup
+30: 30th minute
+08: 08 AM
+10: 10th day
+06: 6th month (June)
+* : Every day of week
+
+#####Schedule a Job For More Than One Instance (e.g. Twice a Day):
+00 11,16 * * * /home/ramesh/bin/incremental-backup
+<<This example executes the specified incremental backup shell script (incremental-backup) at 11:00 and 16:00 on every day. 
+<<The comma separated value in a field specifies that the command needs to be executed in all the mentioned time.
+
+#####Schedule a Job for Specific Range of Time (e.g. Only on Weekdays):
+########Cron Job everyday during working hours:
+00 09-18 * * * /home/ramesh/bin/check-db-status
+<<This example checks the status of the database everyday (including weekends) during the working hours 9 a.m – 6 p.m
+00		: 0th Minute (Top of the hour)
+09-18	: 9 am, 10 am, 11 am, 12 am, 1 pm, 2 pm, 3 pm, 4 pm, 5 pm, 6 pm
+*		: Every day
+*		: Every month
+*		: Every day of the week
+
+#####Cron Job every weekday during working hours
+00 09-18 * * 1-5 /home/ramesh/bin/check-db-status
+<<This example checks the status of the database every weekday (i.e excluding Sat and Sun) during the working hours 9 a.m – 6 p.m.
+00		: 0th Minute (Top of the hour)
+09-18	: 9 am, 10 am,11 am, 12 am, 1 pm, 2 pm, 3 pm, 4 pm, 5 pm, 6 pm
+*		: Every day
+*		: Every month
+1-5		: Mon, Tue, Wed, Thu and Fri (Every Weekday)
+##########################
+##########################
+##########################
+##########################
+View Current Logged-In User’s Crontab entries
+To view your crontab entries type crontab -l from your unix account as shown below.
+
+ramesh@dev-db$ crontab -l
+@yearly /home/ramesh/annual-maintenance
+*/10 * * * * /home/ramesh/check-disk-space
+[Note: This displays crontab of the current logged in user]
+
+#####Edit Root Crontab entries:
+root@dev-db# crontab -e
+
+#####Edit Other Linux User’s Crontab File entries
+root@dev-db# crontab -u sathiya -e

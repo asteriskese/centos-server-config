@@ -1,0 +1,6 @@
+8:07 AM Thu/17/06/2010
+--Khong duoc dung tren UNIX, SUN
+#route -n
+
+--Duoc ap dung tren Unix, SUN, LINUX
+#netstat -rn
